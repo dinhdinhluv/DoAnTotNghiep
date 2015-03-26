@@ -23,7 +23,6 @@
                 <ul id="menu">              
                     <li><%: Html.ActionLink("Lớp", "Index", "Lop")%></li>
                     <li><%: Html.ActionLink("Khoa", "Index", "Khoa")%></li>
-                    <li>I'm here!</li>
                 </ul>
             
             </div>
