@@ -8,3 +8,8 @@ D:\Source\DoAnNhomThucTap\DoAnTotNghiep\DOANDEMO\bin\DOANDEMO.pdb
 D:\Source\DoAnNhomThucTap\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.csprojResolveAssemblyReference.cache
 D:\Source\DoAnNhomThucTap\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.dll
 D:\Source\DoAnNhomThucTap\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.pdb
+D:\File Data\BT ASP.NET MVC 2\DoAnTotNghiep\DoAnTotNghiep\DOANDEMO\bin\DOANDEMO.dll
+D:\File Data\BT ASP.NET MVC 2\DoAnTotNghiep\DoAnTotNghiep\DOANDEMO\bin\DOANDEMO.pdb
+D:\File Data\BT ASP.NET MVC 2\DoAnTotNghiep\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.csprojResolveAssemblyReference.cache
+D:\File Data\BT ASP.NET MVC 2\DoAnTotNghiep\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.dll
+D:\File Data\BT ASP.NET MVC 2\DoAnTotNghiep\DoAnTotNghiep\DOANDEMO\obj\Debug\DOANDEMO.pdb

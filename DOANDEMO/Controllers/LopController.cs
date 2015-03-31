@@ -19,37 +19,6 @@ namespace DOANDEMO.Controllers
         LopBussiness _LOP = new LopBussiness();
         public ActionResult Index(int? pageIndex)
         {
-            var ws = new vn.dongnai.hotich.LienThongMotCuaWS();
-            var json = Json(new
-            {
-                MaDonVi = 750, MaLoaiHoSo = "01.DangKyKhaiSinhTrongNuoc", MaHoSo = 750, NgayNhanHoSo = "03-06-1990",
-                ChuHoSo = "Quang Tri",
-                ChuHoSo_DienThoai = "123456",
-                ChuHoSo_DiDong = "654321",
-                ChuHoSo_Email="new@gmail.com",
-                ChuHoSo_DiaChi = "Hoa An",
-                NguoiNopHoSo = "Tran Vinh",
-                NguoiNopHoSo_DienThoai = "789456",
-                NguoiNopHoSo_DiaChi="Tan Hiep",
-                NguoiNopHoSo_SoGiayChungThucCaNhan="453",
-                NguoiNopHoSo_QuanHe = "Ban",
-                NguoiNopHoSo_DanToc="Kinh",
-                NguoiNopHoSo_QuocTich="VietNam",
-                CanBoNhanHoSo="Phuoc",
-                CanBoNhanHoSo_TenDangNhap = "nthphuoc"
-
-            });
-            var result1 = ws.SendHoSoMotCua(json.ToString(), "lt.tohotro", "abc123@");
-            var result2 = ws.SendHoSoMotCua("{MaDonVi:750,MaLoaiHoSo:01.DangKyKhaiSinhTrongNuoc," +
-                              "MaHoSo:750,NgayNhanHoSo:03-06-1990,ChuHoSo:Quang Tri," +
-                              "ChuHoSo_DienThoai:123456,ChuHoSo_DiDong:654321," +
-                              "ChuHoSo_Email:new@gmail.com,ChuHoSo_DiaChi:Hoa An," +
-                              "NguoiNopHoSo:Tran Vinh,NguoiNopHoSo_DienThoai:789," +
-                              "NguoiNopHoSo_DiaChi:Tan Hiep," +
-                              "NguoiNopHoSo_SoGiayChungThucCaNhan:271,NguoiNopHoSo_QuanHe:Ban," +
-                              "NguoiNopHoSo_DanToc:Kinh,NguoiNopHoSo_QuocTich:Viet Nam," +
-                              "CanBoNhanHoSo:Phuoc,CanBoNhanHoSo_TenDangNhap:nthphuoc}", "lt.tohotro", "abc123@");
-
             var lstLop = _LOP.getAllLop();
             
             KHOA_DMKhoaForm frmKhoa = new KHOA_DMKhoaForm();
