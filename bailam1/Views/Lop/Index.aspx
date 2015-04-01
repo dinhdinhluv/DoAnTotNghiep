@@ -55,8 +55,8 @@
                         <td>
                             <%: item.ThoiGianNienKhoa %>
                         </td>
-                        <td>
-                            <%: item.NgayThem %>
+                        <td>aksjgdaiugdaiuhdaiuwhd
+                            <%: item.NgayThem.ToString("dd/MM/yyyy HH:ss") %>
                         </td>
                         <td>
                             <%: Html.ActionLink("Sửa", "SuaLop", new { id = item.ID })%>
