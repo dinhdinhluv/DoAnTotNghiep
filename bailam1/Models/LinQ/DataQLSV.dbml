@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="data_QLSV" Class="DataQLSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=data_QLSV;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="data_QLSVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DM_DANTOC" Member="DM_DANTOCs">
+    <Type Name="DM_DANTOC">
+      <Column Name="MaDanToc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanToc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_KHOA" Member="DM_KHOAs">
+    <Type Name="DM_KHOA">
+      <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenKhoa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_KHOA_DM_CHUYENNGANH_THEO_KHOA" Member="DM_CHUYENNGANH_THEO_KHOAs" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="DM_CHUYENNGANH_THEO_KHOA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_QUEQUAN" Member="DM_QUEQUANs">
+    <Type Name="DM_QUEQUAN">
+      <Column Name="MaQueQuan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenQueQuan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_TONGIAO" Member="DM_TONGIAOs">
+    <Type Name="DM_TONGIAO">
+      <Column Name="MaTonGiao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTonGiao" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOP" Member="LOPs">
+    <Type Name="LOP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaChuyenNganh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaNienKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NguoiThem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NguoiSua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayThem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_CHUYENNGANH_THEO_KHOA" Member="DM_CHUYENNGANH_THEO_KHOAs">
+    <Type Name="DM_CHUYENNGANH_THEO_KHOA">
+      <Column Name="MaChuyenNganh" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TenChuyenNganh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="DM_KHOA_DM_CHUYENNGANH_THEO_KHOA" Member="DM_KHOA" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="DM_KHOA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_NIENKHOA" Member="DM_NIENKHOAs">
+    <Type Name="DM_NIENKHOA">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNienKhoa" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNienKhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThoiGienNienKhoa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
