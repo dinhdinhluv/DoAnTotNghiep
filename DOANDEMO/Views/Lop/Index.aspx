@@ -8,12 +8,13 @@
 <center>
 <table>
 <tr><td><%: Html.ActionLink("Thêm mới lớp", "ThemLop") %></td></tr>
-        <tr>
+        <tr style="text-align: center;">
             <th>Mã Lớp</th>
             <th>Tên lớp</th>
             <th>Khoa</th>
             <th>Chuyên ngành</th>
             <th>Niên khóa</th>
+            <th>Ngày thêm</th>
             <th></th>
         </tr>
 
@@ -23,6 +24,7 @@
         <td><%: item.TenKhoa %></td>
         <td><%: item.TenChuyenNganh %></td>
         <td><%: item.ThoiGianNienKhoa %></td>
+        <td><%: item.NgayThem %></td>
             <td>
                 <%: Html.ActionLink("Sửa", "SuaLop", new { id = item.ID })%> |
                 <%: Html.ActionLink("Xóa", "XoaLop", new { id = item.ID })%>

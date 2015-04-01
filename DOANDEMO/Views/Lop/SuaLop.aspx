@@ -15,7 +15,7 @@
                     Mã lớp:
                 </td>
                 <td>
-                    <input type="text" name="MaLop" value="<%:Model.MaLop %>" />
+                    <input type="text" readonly="readonly" name="MaLop" value="<%:Model.MaLop %>" />
                 </td>
             </tr>
             <tr>
@@ -38,8 +38,8 @@
                 <td>
                     Chuyên ngành:
                 </td>
-                <td>
-                    <%=Html.DropDownList("MaChuyenNganh", Model.listChuyenNganh)%>
+                <td id="Loadcbx">
+                    
                 </td>
             </tr>
             <tr>

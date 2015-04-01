@@ -24,7 +24,6 @@
                     <li><%: Html.ActionLink("Lớp", "Index", "Lop")%></li>
                     <li><%: Html.ActionLink("Khoa", "Index", "Khoa")%></li>
                 </ul>
-            
             </div>
         </div>
 
@@ -32,6 +31,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">
+
             </div>
         </div>
     </div>

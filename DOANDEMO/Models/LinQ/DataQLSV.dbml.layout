@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataQLSV">
   <DataContextMoniker Name="/DataQLSVDataContext" />
   <nestedChildShapes>
-    <classShape Id="3ec78e97-339f-4204-aadf-f9424464f0bc" absoluteBounds="0.75, 3.75, 2, 2.9247054036458326">
-      <DataClassMoniker Name="/DataQLSVDataContext/LOP" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eeb2aea7-07a0-4431-9b53-0bc3c590d8f2" absoluteBounds="0.765, 4.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8d262540-7430-463c-878f-31caba21ca01" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
       <DataClassMoniker Name="/DataQLSVDataContext/DM_CHUYENNGANH_THEO_KHOA" />
       <nestedChildShapes>
@@ -51,5 +45,11 @@
         <classShapeMoniker Id="8d262540-7430-463c-878f-31caba21ca01" />
       </nodes>
     </associationConnector>
+    <classShape Id="9b563fc5-eb6e-4d90-ba30-3033ab554b59" absoluteBounds="0.875, 3.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataQLSVDataContext/LOP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="965d6b76-b194-4a47-b0e1-60803f363b2f" absoluteBounds="0.89000000000000012, 4.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
