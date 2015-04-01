@@ -9,6 +9,9 @@ namespace bailam1.Models.FormModel
 {
     public class KHOA_DMKhoaForm
     {
+        public DateTime NgayThem { get; set; }
+        public DateTime NgaySua { get; set; }
+
         public int ID { get; set; }
 
         public string MaLop { get; set; }

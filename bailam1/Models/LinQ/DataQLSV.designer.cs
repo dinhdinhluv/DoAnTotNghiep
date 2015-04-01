@@ -30,21 +30,21 @@ namespace bailam1.Models.LinQ
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertLOP(LOP instance);
+    partial void UpdateLOP(LOP instance);
+    partial void DeleteLOP(LOP instance);
+    partial void InsertDM_TONGIAO(DM_TONGIAO instance);
+    partial void UpdateDM_TONGIAO(DM_TONGIAO instance);
+    partial void DeleteDM_TONGIAO(DM_TONGIAO instance);
+    partial void InsertDM_QUEQUAN(DM_QUEQUAN instance);
+    partial void UpdateDM_QUEQUAN(DM_QUEQUAN instance);
+    partial void DeleteDM_QUEQUAN(DM_QUEQUAN instance);
     partial void InsertDM_DANTOC(DM_DANTOC instance);
     partial void UpdateDM_DANTOC(DM_DANTOC instance);
     partial void DeleteDM_DANTOC(DM_DANTOC instance);
     partial void InsertDM_KHOA(DM_KHOA instance);
     partial void UpdateDM_KHOA(DM_KHOA instance);
     partial void DeleteDM_KHOA(DM_KHOA instance);
-    partial void InsertDM_QUEQUAN(DM_QUEQUAN instance);
-    partial void UpdateDM_QUEQUAN(DM_QUEQUAN instance);
-    partial void DeleteDM_QUEQUAN(DM_QUEQUAN instance);
-    partial void InsertDM_TONGIAO(DM_TONGIAO instance);
-    partial void UpdateDM_TONGIAO(DM_TONGIAO instance);
-    partial void DeleteDM_TONGIAO(DM_TONGIAO instance);
-    partial void InsertLOP(LOP instance);
-    partial void UpdateLOP(LOP instance);
-    partial void DeleteLOP(LOP instance);
     partial void InsertDM_NIENKHOA(DM_NIENKHOA instance);
     partial void UpdateDM_NIENKHOA(DM_NIENKHOA instance);
     partial void DeleteDM_NIENKHOA(DM_NIENKHOA instance);
@@ -80,27 +80,11 @@ namespace bailam1.Models.LinQ
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<DM_DANTOC> DM_DANTOCs
+		public System.Data.Linq.Table<LOP> LOPs
 		{
 			get
 			{
-				return this.GetTable<DM_DANTOC>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DM_KHOA> DM_KHOAs
-		{
-			get
-			{
-				return this.GetTable<DM_KHOA>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DM_QUEQUAN> DM_QUEQUANs
-		{
-			get
-			{
-				return this.GetTable<DM_QUEQUAN>();
+				return this.GetTable<LOP>();
 			}
 		}
 		
@@ -112,11 +96,19 @@ namespace bailam1.Models.LinQ
 			}
 		}
 		
-		public System.Data.Linq.Table<LOP> LOPs
+		public System.Data.Linq.Table<DM_QUEQUAN> DM_QUEQUANs
 		{
 			get
 			{
-				return this.GetTable<LOP>();
+				return this.GetTable<DM_QUEQUAN>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DM_DANTOC> DM_DANTOCs
+		{
+			get
+			{
+				return this.GetTable<DM_DANTOC>();
 			}
 		}
 		
@@ -128,355 +120,19 @@ namespace bailam1.Models.LinQ
 			}
 		}
 		
+		public System.Data.Linq.Table<DM_KHOA> DM_KHOAs
+		{
+			get
+			{
+				return this.GetTable<DM_KHOA>();
+			}
+		}
+		
 		public System.Data.Linq.Table<DM_NIENKHOA> DM_NIENKHOAs
 		{
 			get
 			{
 				return this.GetTable<DM_NIENKHOA>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_DANTOC")]
-	public partial class DM_DANTOC : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaDanToc;
-		
-		private string _TenDanToc;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDanTocChanging(int value);
-    partial void OnMaDanTocChanged();
-    partial void OnTenDanTocChanging(string value);
-    partial void OnTenDanTocChanged();
-    #endregion
-		
-		public DM_DANTOC()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDanToc", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDanToc
-		{
-			get
-			{
-				return this._MaDanToc;
-			}
-			set
-			{
-				if ((this._MaDanToc != value))
-				{
-					this.OnMaDanTocChanging(value);
-					this.SendPropertyChanging();
-					this._MaDanToc = value;
-					this.SendPropertyChanged("MaDanToc");
-					this.OnMaDanTocChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDanToc", DbType="NVarChar(MAX)")]
-		public string TenDanToc
-		{
-			get
-			{
-				return this._TenDanToc;
-			}
-			set
-			{
-				if ((this._TenDanToc != value))
-				{
-					this.OnTenDanTocChanging(value);
-					this.SendPropertyChanging();
-					this._TenDanToc = value;
-					this.SendPropertyChanged("TenDanToc");
-					this.OnTenDanTocChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_KHOA")]
-	public partial class DM_KHOA : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaKhoa;
-		
-		private string _TenKhoa;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaKhoaChanging(string value);
-    partial void OnMaKhoaChanged();
-    partial void OnTenKhoaChanging(string value);
-    partial void OnTenKhoaChanged();
-    #endregion
-		
-		public DM_KHOA()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoa", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaKhoa
-		{
-			get
-			{
-				return this._MaKhoa;
-			}
-			set
-			{
-				if ((this._MaKhoa != value))
-				{
-					this.OnMaKhoaChanging(value);
-					this.SendPropertyChanging();
-					this._MaKhoa = value;
-					this.SendPropertyChanged("MaKhoa");
-					this.OnMaKhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhoa", DbType="NVarChar(MAX)")]
-		public string TenKhoa
-		{
-			get
-			{
-				return this._TenKhoa;
-			}
-			set
-			{
-				if ((this._TenKhoa != value))
-				{
-					this.OnTenKhoaChanging(value);
-					this.SendPropertyChanging();
-					this._TenKhoa = value;
-					this.SendPropertyChanged("TenKhoa");
-					this.OnTenKhoaChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_QUEQUAN")]
-	public partial class DM_QUEQUAN : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaQueQuan;
-		
-		private string _TenQueQuan;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaQueQuanChanging(int value);
-    partial void OnMaQueQuanChanged();
-    partial void OnTenQueQuanChanging(string value);
-    partial void OnTenQueQuanChanged();
-    #endregion
-		
-		public DM_QUEQUAN()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaQueQuan", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaQueQuan
-		{
-			get
-			{
-				return this._MaQueQuan;
-			}
-			set
-			{
-				if ((this._MaQueQuan != value))
-				{
-					this.OnMaQueQuanChanging(value);
-					this.SendPropertyChanging();
-					this._MaQueQuan = value;
-					this.SendPropertyChanged("MaQueQuan");
-					this.OnMaQueQuanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenQueQuan", DbType="NVarChar(MAX)")]
-		public string TenQueQuan
-		{
-			get
-			{
-				return this._TenQueQuan;
-			}
-			set
-			{
-				if ((this._TenQueQuan != value))
-				{
-					this.OnTenQueQuanChanging(value);
-					this.SendPropertyChanging();
-					this._TenQueQuan = value;
-					this.SendPropertyChanged("TenQueQuan");
-					this.OnTenQueQuanChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_TONGIAO")]
-	public partial class DM_TONGIAO : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaTonGiao;
-		
-		private string _TenTonGiao;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaTonGiaoChanging(int value);
-    partial void OnMaTonGiaoChanged();
-    partial void OnTenTonGiaoChanging(string value);
-    partial void OnTenTonGiaoChanged();
-    #endregion
-		
-		public DM_TONGIAO()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTonGiao", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaTonGiao
-		{
-			get
-			{
-				return this._MaTonGiao;
-			}
-			set
-			{
-				if ((this._MaTonGiao != value))
-				{
-					this.OnMaTonGiaoChanging(value);
-					this.SendPropertyChanging();
-					this._MaTonGiao = value;
-					this.SendPropertyChanged("MaTonGiao");
-					this.OnMaTonGiaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTonGiao", DbType="NVarChar(MAX)")]
-		public string TenTonGiao
-		{
-			get
-			{
-				return this._TenTonGiao;
-			}
-			set
-			{
-				if ((this._TenTonGiao != value))
-				{
-					this.OnTenTonGiaoChanging(value);
-					this.SendPropertyChanging();
-					this._TenTonGiao = value;
-					this.SendPropertyChanged("TenTonGiao");
-					this.OnTenTonGiaoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -503,9 +159,9 @@ namespace bailam1.Models.LinQ
 		
 		private string _NguoiSua;
 		
-		private string _NgayThem;
+		private System.Nullable<System.DateTime> _NgayThem;
 		
-		private string _NgaySua;
+		private System.Nullable<System.DateTime> _NgaySua;
 		
 		private System.Nullable<bool> _IsDelete;
 		
@@ -529,9 +185,9 @@ namespace bailam1.Models.LinQ
     partial void OnNguoiThemChanged();
     partial void OnNguoiSuaChanging(string value);
     partial void OnNguoiSuaChanged();
-    partial void OnNgayThemChanging(string value);
+    partial void OnNgayThemChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayThemChanged();
-    partial void OnNgaySuaChanging(string value);
+    partial void OnNgaySuaChanging(System.Nullable<System.DateTime> value);
     partial void OnNgaySuaChanged();
     partial void OnIsDeleteChanging(System.Nullable<bool> value);
     partial void OnIsDeleteChanged();
@@ -702,8 +358,8 @@ namespace bailam1.Models.LinQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayThem", DbType="NVarChar(50)")]
-		public string NgayThem
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayThem", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayThem
 		{
 			get
 			{
@@ -722,8 +378,8 @@ namespace bailam1.Models.LinQ
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySua", DbType="NVarChar(50)")]
-		public string NgaySua
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySua", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgaySua
 		{
 			get
 			{
@@ -758,6 +414,264 @@ namespace bailam1.Models.LinQ
 					this._IsDelete = value;
 					this.SendPropertyChanged("IsDelete");
 					this.OnIsDeleteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_TONGIAO")]
+	public partial class DM_TONGIAO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaTonGiao;
+		
+		private string _TenTonGiao;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTonGiaoChanging(int value);
+    partial void OnMaTonGiaoChanged();
+    partial void OnTenTonGiaoChanging(string value);
+    partial void OnTenTonGiaoChanged();
+    #endregion
+		
+		public DM_TONGIAO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTonGiao", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaTonGiao
+		{
+			get
+			{
+				return this._MaTonGiao;
+			}
+			set
+			{
+				if ((this._MaTonGiao != value))
+				{
+					this.OnMaTonGiaoChanging(value);
+					this.SendPropertyChanging();
+					this._MaTonGiao = value;
+					this.SendPropertyChanged("MaTonGiao");
+					this.OnMaTonGiaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenTonGiao", DbType="NVarChar(MAX)")]
+		public string TenTonGiao
+		{
+			get
+			{
+				return this._TenTonGiao;
+			}
+			set
+			{
+				if ((this._TenTonGiao != value))
+				{
+					this.OnTenTonGiaoChanging(value);
+					this.SendPropertyChanging();
+					this._TenTonGiao = value;
+					this.SendPropertyChanged("TenTonGiao");
+					this.OnTenTonGiaoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_QUEQUAN")]
+	public partial class DM_QUEQUAN : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaQueQuan;
+		
+		private string _TenQueQuan;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaQueQuanChanging(int value);
+    partial void OnMaQueQuanChanged();
+    partial void OnTenQueQuanChanging(string value);
+    partial void OnTenQueQuanChanged();
+    #endregion
+		
+		public DM_QUEQUAN()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaQueQuan", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaQueQuan
+		{
+			get
+			{
+				return this._MaQueQuan;
+			}
+			set
+			{
+				if ((this._MaQueQuan != value))
+				{
+					this.OnMaQueQuanChanging(value);
+					this.SendPropertyChanging();
+					this._MaQueQuan = value;
+					this.SendPropertyChanged("MaQueQuan");
+					this.OnMaQueQuanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenQueQuan", DbType="NVarChar(MAX)")]
+		public string TenQueQuan
+		{
+			get
+			{
+				return this._TenQueQuan;
+			}
+			set
+			{
+				if ((this._TenQueQuan != value))
+				{
+					this.OnTenQueQuanChanging(value);
+					this.SendPropertyChanging();
+					this._TenQueQuan = value;
+					this.SendPropertyChanged("TenQueQuan");
+					this.OnTenQueQuanChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_DANTOC")]
+	public partial class DM_DANTOC : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDanToc;
+		
+		private string _TenDanToc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDanTocChanging(int value);
+    partial void OnMaDanTocChanged();
+    partial void OnTenDanTocChanging(string value);
+    partial void OnTenDanTocChanged();
+    #endregion
+		
+		public DM_DANTOC()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDanToc", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaDanToc
+		{
+			get
+			{
+				return this._MaDanToc;
+			}
+			set
+			{
+				if ((this._MaDanToc != value))
+				{
+					this.OnMaDanTocChanging(value);
+					this.SendPropertyChanging();
+					this._MaDanToc = value;
+					this.SendPropertyChanged("MaDanToc");
+					this.OnMaDanTocChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenDanToc", DbType="NVarChar(MAX)")]
+		public string TenDanToc
+		{
+			get
+			{
+				return this._TenDanToc;
+			}
+			set
+			{
+				if ((this._TenDanToc != value))
+				{
+					this.OnTenDanTocChanging(value);
+					this.SendPropertyChanging();
+					this._TenDanToc = value;
+					this.SendPropertyChanged("TenDanToc");
+					this.OnTenDanTocChanged();
 				}
 			}
 		}
@@ -842,6 +756,92 @@ namespace bailam1.Models.LinQ
 				{
 					this._MaKhoa = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_KHOA")]
+	public partial class DM_KHOA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaKhoa;
+		
+		private string _TenKhoa;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaKhoaChanging(string value);
+    partial void OnMaKhoaChanged();
+    partial void OnTenKhoaChanging(string value);
+    partial void OnTenKhoaChanged();
+    #endregion
+		
+		public DM_KHOA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhoa", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaKhoa
+		{
+			get
+			{
+				return this._MaKhoa;
+			}
+			set
+			{
+				if ((this._MaKhoa != value))
+				{
+					this.OnMaKhoaChanging(value);
+					this.SendPropertyChanging();
+					this._MaKhoa = value;
+					this.SendPropertyChanged("MaKhoa");
+					this.OnMaKhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhoa", DbType="NVarChar(MAX)")]
+		public string TenKhoa
+		{
+			get
+			{
+				return this._TenKhoa;
+			}
+			set
+			{
+				if ((this._TenKhoa != value))
+				{
+					this.OnTenKhoaChanging(value);
+					this.SendPropertyChanging();
+					this._TenKhoa = value;
+					this.SendPropertyChanged("TenKhoa");
+					this.OnTenKhoaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

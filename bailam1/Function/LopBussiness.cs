@@ -5,8 +5,6 @@ using System.Web;
 using bailam1.Models.FormModel;
 using bailam1.Models.LinQ;
 using Webdiyer.WebControls.Mvc;
-using bailam1.Function;
-
 namespace bailam1.Function
 {
     public class LopBussiness
@@ -25,6 +23,7 @@ namespace bailam1.Function
                 a.ID = i.ID;
                 a.MaLop = i.MaLop;
                 a.TenLop = i.TenLop;
+                a.NgayThem = Convert.ToDateTime(i.NgayThem);
 
                 a.MaChuyenNganh = i.MaChuyenNganh;
                 var w = _QLSVData.DM_CHUYENNGANH_THEO_KHOAs.Where(h => h.MaChuyenNganh == i.MaChuyenNganh);
@@ -62,9 +61,10 @@ namespace bailam1.Function
             {
                 lstLOP.MaLop = DMLOP.MaLop;
                 lstLOP.TenLop = DMLOP.TenLop;
-                lstLOP.MaKhoa = DMLOP.MaKhoa;
                 lstLOP.MaChuyenNganh = DMLOP.MaChuyenNganh;
+                lstLOP.MaKhoa = DMLOP.MaKhoa;
                 lstLOP.MaNienKhoa = DMLOP.MaNienKhoa.Trim();
+                lstLOP.NgayThem = DateTime.Now;
                 lstLOP.IsDelete = Convert.ToBoolean("False");
 
                 _QLSVData.LOPs.InsertOnSubmit(lstLOP);
@@ -87,6 +87,7 @@ namespace bailam1.Function
                 Lop.MaKhoa = DMLOP.MaKhoa;
                 Lop.MaChuyenNganh = DMLOP.MaChuyenNganh;
                 Lop.MaNienKhoa = DMLOP.MaNienKhoa;
+                Lop.NgaySua = DateTime.Now;
                 Lop.IsDelete = Convert.ToBoolean("False");
 
                 try
