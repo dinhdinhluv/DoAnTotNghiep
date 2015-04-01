@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<bailam1.Models.FormModel.KHOA_DMKhoaForm>" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Themlop
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<div class="modal-dialog" id="themlop">
+
+<div class="modal-dialog" id="themlop" >
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -47,7 +47,15 @@
                         </form>
                     </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="goback()">Đóng</button>
+                    <script language="javascript" type="text/javascript">
+// <![CDATA[
+                        function goback() {
+                            history.back(-1);
+                        }
+
+// ]]>
+        </script>
                     <button type="button" class="btn btn-primary" id="BtnAdd" onclick="Themlop()">Thêm</button>
                 </div>
                 </div>

@@ -55,7 +55,7 @@
                         <td>
                             <%: item.ThoiGianNienKhoa %>
                         </td>
-                        <td>aksjgdaiugdaiuhdaiuwhd
+                        <td>
                             <%: item.NgayThem.ToString("dd/MM/yyyy HH:ss") %>
                         </td>
                         <td>
@@ -89,7 +89,6 @@
             function btnadd_onclick(lo) {
                 window.location = lo;
             }
-
 // ]]>
         </script>
     </div>

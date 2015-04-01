@@ -51,7 +51,15 @@
                         </form>
                     </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-default" onclick="goback()">Đóng</button>
+                    <script language="javascript" type="text/javascript">
+// <![CDATA[
+                        function goback() {
+                            history.back(-1);
+                        }
+
+// ]]>
+        </script>
                     <button type="button" class="btn btn-primary" id="BtnUpdate" onclick="SuaLop()">Sửa</button>
                 </div>
                 </div>
