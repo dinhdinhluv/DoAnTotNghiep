@@ -114,6 +114,7 @@
     <Content Include="Views\Lop\DanhSachLop.aspx" />
     <Content Include="Views\Lop\loadchuyennganh.ascx" />
     <Content Include="Views\Lop\SuaLop.aspx" />
+    <Content Include="Views\Lop\SuaLopUc.ascx" />
     <Content Include="Views\Lop\Themlop.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

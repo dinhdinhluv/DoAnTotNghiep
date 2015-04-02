@@ -41,7 +41,7 @@
                 <div class="form-group">
                     <label for="Chuyennganh" class="col-sm-2 control-label">
                         Chuyên ngành</label>
-                    <div class="col-sm-10" id="Loadcbx"></div>
+                    <div class="col-sm-10" id="Loadcbx"><%=Html.DropDownList("MaChuyenNganh", Model.listChuyenNganh)%></div>
                 </div>
                 <div class="form-group">
                     <label for="Name" class="col-sm-2 control-label">

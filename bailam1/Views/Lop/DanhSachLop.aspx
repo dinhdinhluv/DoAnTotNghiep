@@ -18,6 +18,27 @@
         </div>
         <input class="btn btn-primary center-block" value="Thêm mới" id="btnadd" onclick="return btnadd_onclick('Lop/Themlop')" />
     </div>
+
+    <div class="modal fade" id="sualop">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sửa lớp</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-primary" id="BtnUpdate" onclick="SuaLop()">Sửa</button>
+         <button type="button" class="btn btn-default" onclick="$('#sualop').modal('hide');">Đóng</button>
+
+               
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+ 
     <script language="javascript" type="text/javascript">
         $(function () {
             PhanTrang();

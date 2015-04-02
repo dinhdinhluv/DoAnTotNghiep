@@ -46,7 +46,7 @@ namespace bailam1.Controllers
         public ActionResult loadchuyennganh(string makhoa)
         {
             KHOA_DMKhoaForm frmKhoa = new KHOA_DMKhoaForm();
-            frmKhoa.listChuyenNganh = _KHOA.BuildChuyenNganh(makhoa);
+            frmKhoa.listChuyenNganh = _KHOA.BuildChuyenNganh(makhoa,"");
             return PartialView("~/Views/Lop/loadchuyennganh.ascx", frmKhoa);
         }
 
@@ -57,7 +57,7 @@ namespace bailam1.Controllers
             var frmThemLop = new KHOA_DMKhoaForm();
             frmThemLop.listKhoa = _KHOA.BuildKhoa(frmThemLop.MaKhoa);
             frmThemLop.listNienKhoa = _KHOA.BuildNienKhoa(frmThemLop.MaNienKhoa);
-            frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaChuyenNganh);
+            frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaChuyenNganh,"");
             return View(frmThemLop);
         }
 
@@ -65,18 +65,30 @@ namespace bailam1.Controllers
         public ActionResult ThemLop(KHOA_DMKhoaForm lop)
         {
             _LOP.ThemLop(lop);
-            return RedirectToAction("Index");
+            return RedirectToAction("DanhSachLop");
         }
 
         /*--------------------SỬA LỚP------------------*/
         public ActionResult SuaLop(int id)
         {
+            //var res = _LOP.GetLopTheoID(id);
+            //res.listKhoa = _KHOA.BuildKhoa(res.MaKhoa);
+
+            //res.listChuyenNganh = _KHOA.BuildChuyenNganh(res.MaChuyenNganh);
+            //res.listNienKhoa = _KHOA.BuildNienKhoa(res.MaNienKhoa);
+            return View("~/Views/Lop/SuaLop.aspx");
+
+
+        }
+
+        public ActionResult SuaLopAjax(int id)
+        {
             var res = _LOP.GetLopTheoID(id);
             res.listKhoa = _KHOA.BuildKhoa(res.MaKhoa);
 
-            res.listChuyenNganh = _KHOA.BuildChuyenNganh(res.MaChuyenNganh);
+            res.listChuyenNganh = _KHOA.BuildChuyenNganh(res.MaKhoa,res.MaChuyenNganh);
             res.listNienKhoa = _KHOA.BuildNienKhoa(res.MaNienKhoa);
-            return View("~/Views/Lop/SuaLop.aspx", res);
+            return View("~/Views/Lop/SuaLopUc.ascx", res);
 
 
         }
@@ -85,14 +97,14 @@ namespace bailam1.Controllers
         public ActionResult SuaLop(int id, KHOA_DMKhoaForm sv)
         {
             _LOP.SuaLop(sv);
-            return RedirectToAction("Index");
+            return RedirectToAction("DanhSachLop");
         }
         /*--------------------XÓA LỚP------------------*/
         [HttpGet]
-        public ActionResult XoaLop(int id)
+        public JsonResult XoaLop(int id)
         {
-            _LOP.XoaLop(id);
-            return RedirectToAction("Index");
+           var Xoa = _LOP.XoaLop(id);
+           return Json(Xoa, JsonRequestBehavior.AllowGet);
         }
 
     }

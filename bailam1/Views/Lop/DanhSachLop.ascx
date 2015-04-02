@@ -17,6 +17,20 @@
         return false;
     });
 
+    function SuaTrenModal(id) {
+        $.ajax({
+            url: "/Lop/SuaLopAjax",
+            data: { id: id },
+            type: "get",
+            success: function (data) {
+                $("#sualop").find(".modal-body").html(data);
+                $("#sualop").modal("show");
+            },
+            error: function () {
+                alert("Lỗi");
+            }
+        });
+    }
 </script>
 <table class="table table-hover table-responsive text-center">
             
@@ -38,9 +52,7 @@
                         <th>
                             Niên khóa
                         </th>
-                        <th>
-                            Ngày thêm
-                        </th>
+                        
                         <th>
                         </th>
                         <th>
@@ -64,19 +76,19 @@
                         <td>
                             <%: item.ThoiGianNienKhoa %>
                         </td>
+                        
                         <td>
-                            <%: item.NgayThem.ToString("dd/MM/yyyy HH:mm") %>
+                        <input type="button" class="btn btn-primary" value="Sửa" onclick="SuaTrenModal(<%= item.ID %>)" />
+                            
                         </td>
                         <td>
-                            <%: Html.ActionLink("Sửa", "SuaLop", new { id = item.ID })%>
-                        </td>
-                        <td>
-                            <%: Html.ActionLink("Xóa", "XoaLop", new { id = item.ID })%>
+                        <input type="button" class="btn btn-primary" value="Xóa" onclick="XoaLop(<%= item.ID %>)" />
+                            <%--<%: Html.ActionLink("Xóa", "XoaLop", new { id = item.ID })%>--%>
                         </td>
                     </tr>
                     <% } %>
                     <tr>
-                        <td colspan="8">
+                        <td colspan="7">
                             <%
                                 var pagerOptions = new PagerOptions();
                             %>
@@ -92,6 +104,11 @@
                 </tbody>
             </table>
         </div>
+
+
+        
+
+
         <script language="javascript" type="text/javascript">
 // <![CDATA[
             function btnadd_onclick(lo) {

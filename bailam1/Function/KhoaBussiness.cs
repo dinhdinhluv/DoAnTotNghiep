@@ -72,7 +72,7 @@ namespace bailam1.Function
             return new SelectList(selectList, "Value", "Text", selectedvalue);
         }
 
-        public SelectList BuildChuyenNganh(string MaKhoa)
+        public SelectList BuildChuyenNganh(string MaKhoa, string MaChuyenNganh)
         {
             IEnumerable<DM_CHUYENNGANH_THEO_KHOA> lstKhoa = _QLSVData.DM_CHUYENNGANH_THEO_KHOAs.Where(a => a.MaKhoa == MaKhoa);
             IList<object> selectList = new List<object> { new { Value = "", Text = "-- Chọn chuyên ngành --" } };
@@ -81,7 +81,7 @@ namespace bailam1.Function
                 selectList.Add(new { Value = item.MaChuyenNganh, Text = item.TenChuyenNganh });
             }
 
-            return new SelectList(selectList, "Value", "Text", "");
+            return new SelectList(selectList, "Value", "Text", MaChuyenNganh);
         }
     }
 }

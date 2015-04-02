@@ -34,11 +34,37 @@ function Themlop() {
     document.forms[0].submit();
 }
 
+function XoaLop(id) {
+    $.ajax({
+        url: "/Lop/XoaLop",
+        data: { id: id },
+        success: function (data) {
+            if (data == true) {
+                alert("Xóa thành công");
+                PhanTrang();
+            }
+            else {
+            alert("Xóa không thành công");
+                PhanTrang();
+            }
+        }
+    });
+}
 
 function SuaLop() {
-    document.forms[0].action = '/Lop/SuaLop/';
-    document.forms[0].method = 'post';
-    document.forms[0].submit();
+//    document.forms[0].action = '/Lop/SuaLop/';
+//    document.forms[0].method = 'post';
+//    document.forms[0].submit();
+    $.ajax({
+        url: "/Lop/SuaLop",
+        type: "post",
+        data: $('#form').serialize(),
+        success: function (data) {
+            alert("Sửa thành công..!");
+            PhanTrang();
+            $('#sualop').modal('hide');
+        }
+    });
 }
 
 
