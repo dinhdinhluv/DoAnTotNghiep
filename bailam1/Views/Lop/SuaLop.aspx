@@ -29,20 +29,6 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="Tenlop" name="TenLop" value="<%:Model.TenLop %>">
                     </div>
-<<<<<<< HEAD
-=======
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="goback()">Đóng</button>
-                    <script language="javascript" type="text/javascript">
-// <![CDATA[
-                        function goback() {
-                            history.back(-1);
-                        }
-
-// ]]>
-        </script>
-                    <button type="button" class="btn btn-primary" id="BtnUpdate" onclick="SuaLop()">Sửa</button>
->>>>>>> origin/master
                 </div>
                 <div class="form-group">
                     <label for="Khoa" class="col-sm-2 control-label">
