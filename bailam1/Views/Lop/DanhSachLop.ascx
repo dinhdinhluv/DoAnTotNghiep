@@ -65,7 +65,11 @@
                             <%: item.ThoiGianNienKhoa %>
                         </td>
                         <td>
+<<<<<<< HEAD:bailam1/Views/Lop/DanhSachLop.ascx
                             <%: item.NgayThem.ToString("dd/MM/yyyy HH:mm") %>
+=======
+                            <%: item.NgayThem.ToString("dd/MM/yyyy HH:ss") %>
+>>>>>>> origin/master:bailam1/Views/Lop/Index.aspx
                         </td>
                         <td>
                             <%: Html.ActionLink("Sửa", "SuaLop", new { id = item.ID })%>
@@ -90,4 +94,19 @@
                 </thead>
                 <tbody>
                 </tbody>
+<<<<<<< HEAD:bailam1/Views/Lop/DanhSachLop.ascx
             </table>
+=======
+            </table>
+        </div>
+        <input class="btn btn-primary center-block" value="Thêm mới" id="btnadd" onclick="return btnadd_onclick('Lop/Themlop')" />
+        <script language="javascript" type="text/javascript">
+// <![CDATA[
+            function btnadd_onclick(lo) {
+                window.location = lo;
+            }
+// ]]>
+        </script>
+    </div>
+</asp:Content>
+>>>>>>> origin/master:bailam1/Views/Lop/Index.aspx
