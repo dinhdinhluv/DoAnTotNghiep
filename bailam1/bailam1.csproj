@@ -70,8 +70,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LopController.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
     <Compile Include="Function\LopBussiness.cs" />
@@ -112,9 +110,8 @@
     <Content Include="img\Sasuke-s-Eternal-Mangekyou-Sharinga.jpg" />
     <Content Include="img\tong-cong-ty-sonadezi-1352889796.jpg" />
     <Content Include="Scripts\test.js" />
-    <Content Include="Views\Admin\ViewPage1.aspx" />
-    <Content Include="Views\Home\Danhmucsinhvien.aspx" />
-    <Content Include="Views\Lop\Index.aspx" />
+    <Content Include="Views\Lop\DanhSachLop.ascx" />
+    <Content Include="Views\Lop\DanhSachLop.aspx" />
     <Content Include="Views\Lop\loadchuyennganh.ascx" />
     <Content Include="Views\Lop\SuaLop.aspx" />
     <Content Include="Views\Lop\Themlop.aspx" />

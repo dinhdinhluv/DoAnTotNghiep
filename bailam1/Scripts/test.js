@@ -45,3 +45,22 @@ function SuaLop() {
 function btnadd_onclick(lo) {
     window.location = lo;
 }
+/**********************************/
+
+function PhanTrang() {
+
+    $.ajax({
+        url: '/Lop/DanhSachLopAjax', // Controller/Action
+        async: false, // chạy bất đồng bộ 2 ajax 
+        data: { TuKhoa: $("#txtTimKiem").val().trim() },
+        success: function (data) { // data đối tượng trả về cuả hàm ajax
+            $("#tdPhanTrang").html(data); // div nhận dữ liệu html 
+            return;
+
+        },
+        error: function () {
+            alert("Không thấy!");
+            return;
+        }
+    });
+}

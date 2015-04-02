@@ -18,17 +18,30 @@ namespace bailam1.Controllers
         DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
         KhoaBussiness _KHOA = new KhoaBussiness();
         LopBussiness _LOP = new LopBussiness();
-        public ActionResult Index(int? pageIndex)
+        public ActionResult DanhSachLop(int? pageIndex)
         {
+            return View("~/Views/Lop/DanhSachLop.aspx");
+        }
+        public ActionResult DanhSachLopAjax(int? pageIndex, string TuKhoa)
+        {
+            var danhsachLop = new KHOA_DMKhoaForm();
             var lstLop = _LOP.getAllLop();
+            danhsachLop.PageNumber = pageIndex ?? 1;
 
-            KHOA_DMKhoaForm frmKhoa = new KHOA_DMKhoaForm();
-            frmKhoa.listKhoa = _KHOA.BuildKhoa(frmKhoa.MaKhoa);
-            frmKhoa.listNienKhoa = _KHOA.BuildNienKhoa(frmKhoa.MaNienKhoa);
-            frmKhoa.listChuyenNganh = _KHOA.BuildChuyenNganh(frmKhoa.MaChuyenNganh);
-            frmKhoa.PageNumber = pageIndex ?? 1;
-            frmKhoa.PageListDanhSachLop = new PagedList<KHOA_DMKhoaForm>(lstLop.DSLOP, frmKhoa.PageNumber, 10);
-            return View("~/Views/Lop/Index.aspx", frmKhoa);
+            //danhsachLop.listKhoa = _KHOA.BuildKhoa(danhsachLop.MaKhoa);
+            //danhsachLop.listNienKhoa = _KHOA.BuildNienKhoa(danhsachLop.MaNienKhoa);
+            //danhsachLop.listChuyenNganh = _KHOA.BuildChuyenNganh(danhsachLop.MaChuyenNganh);
+
+            if (string.IsNullOrEmpty(TuKhoa))
+            {
+                danhsachLop.PageListDanhSachLop = new PagedList<KHOA_DMKhoaForm>(lstLop.DSLOP, danhsachLop.PageNumber, 10);
+            }
+            else
+            {
+                lstLop.DSLOP = lstLop.DSLOP.Where(p=>p.MaLop.Trim().ToLower().Contains(TuKhoa.ToLower())).ToList();
+                danhsachLop.PageListDanhSachLop = new PagedList<KHOA_DMKhoaForm>(lstLop.DSLOP, danhsachLop.PageNumber, 5);
+            }
+            return View("~/Views/Lop/DanhSachLop.ascx", danhsachLop);
         }
         public ActionResult loadchuyennganh(string makhoa)
         {

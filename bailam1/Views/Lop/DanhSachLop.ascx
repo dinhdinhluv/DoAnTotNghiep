@@ -1,18 +1,27 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<bailam1.Models.FormModel.KHOA_DMKhoaForm>" %>
-
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.KHOA_DMKhoaForm>" %>
 <%@ Import Namespace="Webdiyer.WebControls.Mvc" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Quanlylop
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title text-center">
-                QUẢN LÝ LỚP</h3>
-        </div>
-        <div class="panel-body">
-            <table class="table table-hover table-responsive text-center">
+
+<script>
+    $('#myPager a').click(function () {
+        if (this.href != "") {
+            $.ajax({
+                url: this.href,
+                type: 'GET',
+                cache: false,
+                success: function (result) {
+                    $('#tdPhanTrang').html(result);
+                }
+            });
+            return false;
+        }
+        return false;
+    });
+
+</script>
+<table class="table table-hover table-responsive text-center">
+            
                 <thead>
+                
                     <tr>
                         <th>
                             Mã Lớp
@@ -56,7 +65,7 @@
                             <%: item.ThoiGianNienKhoa %>
                         </td>
                         <td>
-                            <%: item.NgayThem %>
+                            <%: item.NgayThem.ToString("dd/MM/yyyy HH:mm") %>
                         </td>
                         <td>
                             <%: Html.ActionLink("Sửa", "SuaLop", new { id = item.ID })%>
@@ -67,7 +76,7 @@
                     </tr>
                     <% } %>
                     <tr>
-                        <td colspan="7">
+                        <td colspan="8">
                             <%
                                 var pagerOptions = new PagerOptions();
                             %>
@@ -82,15 +91,3 @@
                 <tbody>
                 </tbody>
             </table>
-        </div>
-        <input class="btn btn-primary center-block" value="Thêm mới" id="btnadd" onclick="return btnadd_onclick('Lop/Themlop')" />
-        <script language="javascript" type="text/javascript">
-// <![CDATA[
-            function btnadd_onclick(lo) {
-                window.location = lo;
-            }
-
-// ]]>
-        </script>
-    </div>
-</asp:Content>

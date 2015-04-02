@@ -19,7 +19,7 @@ namespace bailam1
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Lop", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Lop", action = "DanhSachLop", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
