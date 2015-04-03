@@ -28,10 +28,27 @@ $(document).ready(function () {
 
 
 
-function Themlop() {
-    document.forms[0].action = '/Lop/Themlop/';
-    document.forms[0].method = 'post';
-    document.forms[0].submit();
+function ThemLop() {
+//    document.forms[0].action = '/Lop/Themlop/';
+//    document.forms[0].method = 'post';
+    //    document.forms[0].submit();
+    $.ajax({
+        url: "/Lop/ThemLop",
+        type: "post",
+        data: $('#formthem').serialize(),
+        success: function (data) {
+            if (data == true) {
+                alert("Thêm thành công..!");
+                PhanTrang();
+                $('#themlop').modal('hide');
+            }
+            else {
+                alert("Thêm không thành công..!");
+                //PhanTrang();
+               // $('#themlop').modal('hide');
+            } 
+        }
+    });
 }
 
 function XoaLop(id) {
@@ -39,38 +56,30 @@ function XoaLop(id) {
         url: "/Lop/XoaLop",
         data: { id: id },
         success: function (data) {
-            if (data == true) {
                 alert("Xóa thành công");
                 PhanTrang();
             }
-            else {
-            alert("Xóa không thành công");
-                PhanTrang();
-            }
-        }
     });
 }
 
 function SuaLop() {
-//    document.forms[0].action = '/Lop/SuaLop/';
-//    document.forms[0].method = 'post';
-//    document.forms[0].submit();
     $.ajax({
         url: "/Lop/SuaLop",
         type: "post",
         data: $('#form').serialize(),
         success: function (data) {
-            alert("Sửa thành công..!");
-            PhanTrang();
-            $('#sualop').modal('hide');
+            if (data == true) {
+                alert("Sửa thành công..!");
+                PhanTrang();
+                $('#sualop').modal('hide');
+            }
+            else {
+                alert("Sửa thành công..!");
+            }
         }
     });
 }
 
-
-function btnadd_onclick(lo) {
-    window.location = lo;
-}
 /**********************************/
 
 function PhanTrang() {
@@ -79,12 +88,12 @@ function PhanTrang() {
         url: '/Lop/DanhSachLopAjax', // Controller/Action
         async: false, // chạy bất đồng bộ 2 ajax 
         data: { TuKhoa: $("#txtTimKiem").val().trim() },
-        success: function (data) { // data đối tượng trả về cuả hàm ajax
+        success: function(data) { // data đối tượng trả về cuả hàm ajax
             $("#tdPhanTrang").html(data); // div nhận dữ liệu html 
             return;
 
         },
-        error: function () {
+        error: function() {
             alert("Không thấy!");
             return;
         }

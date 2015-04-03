@@ -52,20 +52,30 @@ namespace bailam1.Controllers
 
 
         /*----------------THÊM LỚP-----------------------*/
-        public ActionResult Themlop()
+        public ActionResult ThemLop()
+        {
+            //var frmThemLop = new KHOA_DMKhoaForm();
+            //frmThemLop.listKhoa = _KHOA.BuildKhoa(frmThemLop.MaKhoa);
+            //frmThemLop.listNienKhoa = _KHOA.BuildNienKhoa(frmThemLop.MaNienKhoa);
+            //frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaChuyenNganh,"");
+            //return View(frmThemLop);
+            return View("~/Views/Lop/ThemLop.aspx");
+        }
+
+        public ActionResult ThemLopAjax()
         {
             var frmThemLop = new KHOA_DMKhoaForm();
             frmThemLop.listKhoa = _KHOA.BuildKhoa(frmThemLop.MaKhoa);
             frmThemLop.listNienKhoa = _KHOA.BuildNienKhoa(frmThemLop.MaNienKhoa);
-            frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaChuyenNganh,"");
-            return View(frmThemLop);
+            frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaKhoa,frmThemLop.MaChuyenNganh);
+            return View("~/Views/Lop/ThemLopUc.ascx",frmThemLop);
         }
 
         [HttpPost]
-        public ActionResult ThemLop(KHOA_DMKhoaForm lop)
+        public JsonResult ThemLop(KHOA_DMKhoaForm lop)
         {
-            _LOP.ThemLop(lop);
-            return RedirectToAction("DanhSachLop");
+            var Them = _LOP.ThemLop(lop);
+            return Json(Them, JsonRequestBehavior.AllowGet);
         }
 
         /*--------------------SỬA LỚP------------------*/
@@ -94,10 +104,10 @@ namespace bailam1.Controllers
         }
 
         [HttpPost]
-        public ActionResult SuaLop(int id, KHOA_DMKhoaForm sv)
+        public JsonResult SuaLop(int id, KHOA_DMKhoaForm sv)
         {
-            _LOP.SuaLop(sv);
-            return RedirectToAction("DanhSachLop");
+            var Sua = _LOP.SuaLop(sv);
+            return Json(Sua, JsonRequestBehavior.AllowGet);
         }
         /*--------------------XÓA LỚP------------------*/
         [HttpGet]

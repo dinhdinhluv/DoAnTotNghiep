@@ -53,10 +53,10 @@ namespace bailam1.Function
             return t;
         }
 
-        public string ThemLop(KHOA_DMKhoaForm DMLOP)
+        public bool ThemLop(KHOA_DMKhoaForm DMLOP)
         {
             var lstLOP = new LOP();
-            var lst = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop == DMLOP.MaLop);
+            var lst = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop.ToLower() == DMLOP.MaLop.ToLower());
             if (lst == null)
             {
                 lstLOP.MaLop = DMLOP.MaLop;
@@ -69,15 +69,15 @@ namespace bailam1.Function
 
                 _QLSVData.LOPs.InsertOnSubmit(lstLOP);
                 _QLSVData.SubmitChanges();
-                return "Thêm thành công";
+                return true;
             }
             else
             {
-                return "Không thành công";
+                return false;
             }
         }
 
-        public string SuaLop(KHOA_DMKhoaForm DMLOP)
+        public bool SuaLop(KHOA_DMKhoaForm DMLOP)
         {
             var Lop = _QLSVData.LOPs.FirstOrDefault(t => t.ID == DMLOP.ID);
             if (Lop != null)
@@ -93,33 +93,35 @@ namespace bailam1.Function
                 try
                 {
                     _QLSVData.SubmitChanges();
-                    return "Cập nhật thành công";
+                    return true;
                 }
                 catch
                 {
-                    return "Cập nhật không thành công";
+                    return false;
                 }
             }
-            return "Cập nhật không thành công";
+            return false;
         }
 
-        public string XoaLop(int idLop)
+        public bool XoaLop(int idLop)
         {
             var sv = _QLSVData.LOPs.FirstOrDefault(t => t.ID == idLop);
             if (sv != null)
             {
                 try
                 {
+                    sv.NgaySua = DateTime.Now;
                     sv.IsDelete = Convert.ToBoolean("True");
+                    
                     _QLSVData.SubmitChanges();
-                    return "Xóa thành công";
+                    return true;
                 }
                 catch (Exception)
                 {
-                    return "Xóa không thành công";
+                    return false;
                 }
             }
-            return "Xóa thất bại";
+            return false;
         }
 
         public KHOA_DMKhoaForm GetLopTheoID(int ID)
