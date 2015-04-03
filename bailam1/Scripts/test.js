@@ -41,7 +41,7 @@ function ThemLop() {
                 $('#themlop').modal('hide');
             }
             else {
-                alert("Thêm không thành công..!");
+                alert("Mã lớp trùng..!");
                 //PhanTrang();
                // $('#themlop').modal('hide');
             } 
@@ -50,14 +50,18 @@ function ThemLop() {
 }
 
 function XoaLop(id) {
-    $.ajax({
-        url: "/Lop/XoaLop",
-        data: { id: id },
-        success: function (data) {
+    var r = confirm("Bạn có chắc muốn xóa ?");
+    if (r == true) {
+
+        $.ajax({
+            url: "/Lop/XoaLop",
+            data: { id: id },
+            success: function (data) {
                 alert("Xóa thành công");
                 PhanTrang();
             }
-    });
+        });
+    }
 }
 
 function SuaLop() {
