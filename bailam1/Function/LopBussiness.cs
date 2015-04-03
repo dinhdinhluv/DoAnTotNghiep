@@ -56,25 +56,29 @@ namespace bailam1.Function
         public bool ThemLop(KHOA_DMKhoaForm DMLOP)
         {
             var lstLOP = new LOP();
-            var lst = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop.ToLower() == DMLOP.MaLop.ToLower());
-            if (lst == null)
+            if (DMLOP.MaLop != "")
             {
-                lstLOP.MaLop = DMLOP.MaLop;
-                lstLOP.TenLop = DMLOP.TenLop;
-                lstLOP.MaChuyenNganh = DMLOP.MaChuyenNganh;
-                lstLOP.MaKhoa = DMLOP.MaKhoa;
-                lstLOP.MaNienKhoa = DMLOP.MaNienKhoa.Trim();
-                lstLOP.NgayThem = DateTime.Now;
-                lstLOP.IsDelete = Convert.ToBoolean("False");
+                var lst = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop.ToLower() == DMLOP.MaLop.ToLower());
+                if (lst == null)
+                {
+                    lstLOP.MaLop = DMLOP.MaLop;
+                    lstLOP.TenLop = DMLOP.TenLop;
+                    lstLOP.MaChuyenNganh = DMLOP.MaChuyenNganh;
+                    lstLOP.MaKhoa = DMLOP.MaKhoa;
+                    lstLOP.MaNienKhoa = DMLOP.MaNienKhoa.Trim();
+                    lstLOP.NgayThem = DateTime.Now;
+                    lstLOP.IsDelete = Convert.ToBoolean("False");
 
-                _QLSVData.LOPs.InsertOnSubmit(lstLOP);
-                _QLSVData.SubmitChanges();
-                return true;
+                    _QLSVData.LOPs.InsertOnSubmit(lstLOP);
+                    _QLSVData.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         public bool SuaLop(KHOA_DMKhoaForm DMLOP)
@@ -112,7 +116,7 @@ namespace bailam1.Function
                 {
                     sv.NgaySua = DateTime.Now;
                     sv.IsDelete = Convert.ToBoolean("True");
-                    
+
                     _QLSVData.SubmitChanges();
                     return true;
                 }

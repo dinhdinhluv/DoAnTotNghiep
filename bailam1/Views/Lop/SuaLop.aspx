@@ -4,16 +4,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="modal-dialog" id="sualop">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                
-            </div>
-            <div class="modal-body">
-            </div>
-            </div>
-        </div>
     </div>
 </asp:Content>

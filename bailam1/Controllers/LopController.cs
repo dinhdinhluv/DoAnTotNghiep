@@ -28,9 +28,8 @@ namespace bailam1.Controllers
             var lstLop = _LOP.getAllLop();
             danhsachLop.PageNumber = pageIndex ?? 1;
 
-            //danhsachLop.listKhoa = _KHOA.BuildKhoa(danhsachLop.MaKhoa);
-            //danhsachLop.listNienKhoa = _KHOA.BuildNienKhoa(danhsachLop.MaNienKhoa);
-            //danhsachLop.listChuyenNganh = _KHOA.BuildChuyenNganh(danhsachLop.MaChuyenNganh);
+            danhsachLop.listKhoa = _KHOA.BuildKhoa(danhsachLop.MaKhoa);
+            danhsachLop.listChuyenNganh = _KHOA.BuildChuyenNganh(danhsachLop.MaKhoa,danhsachLop.MaChuyenNganh);
 
             if (string.IsNullOrEmpty(TuKhoa))
             {
@@ -54,11 +53,6 @@ namespace bailam1.Controllers
         /*----------------THÊM LỚP-----------------------*/
         public ActionResult ThemLop()
         {
-            //var frmThemLop = new KHOA_DMKhoaForm();
-            //frmThemLop.listKhoa = _KHOA.BuildKhoa(frmThemLop.MaKhoa);
-            //frmThemLop.listNienKhoa = _KHOA.BuildNienKhoa(frmThemLop.MaNienKhoa);
-            //frmThemLop.listChuyenNganh = _KHOA.BuildChuyenNganh(frmThemLop.MaChuyenNganh,"");
-            //return View(frmThemLop);
             return View("~/Views/Lop/ThemLop.aspx");
         }
 

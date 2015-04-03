@@ -19,10 +19,6 @@ $(document).ready(function () {
     $("#MaKhoa").change(function () {
         Loadcbx($("#MaKhoa").val());
     });
-
-    //    $("#MaChuyenNganh").change(function () {
-    //        Loadcbx($("#MaChuyenNganh").val());
-    //    });
 });
 
 
@@ -32,6 +28,7 @@ function ThemLop() {
 //    document.forms[0].action = '/Lop/Themlop/';
 //    document.forms[0].method = 'post';
     //    document.forms[0].submit();
+    
     $.ajax({
         url: "/Lop/ThemLop",
         type: "post",
@@ -83,7 +80,6 @@ function SuaLop() {
 /**********************************/
 
 function PhanTrang() {
-
     $.ajax({
         url: '/Lop/DanhSachLopAjax', // Controller/Action
         async: false, // chạy bất đồng bộ 2 ajax 
