@@ -21,7 +21,7 @@
     <label for="MaKhoa" class="col-sm-2 control-label">
         Khoa</label>
     <div class="col-sm-10">
-        <%=Html.DropDownList("MaKhoa", Model.listKhoa)%>
+        <%=Html.DropDownList("MaKhoa", Model.listKhoa, new object { })%>
     </div>
 </div>
 <div class="form-group">

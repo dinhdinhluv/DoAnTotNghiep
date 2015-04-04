@@ -31,6 +31,15 @@
         });
     }
 
+    $(function () {
+        //bắt đc sự kiện khi modal đóng thì chạy $('#sualop').find('.modal-body').html('')
+        $("#themlop").on("hide.bs.modal", function () {
+            $('#themlop').find('.modal-body').html('');
+        });
+        $("#sualop").on("hide.bs.modal", function () {
+            $('#sualop').find('.modal-body').html('');
+        });
+    });
 
 </script>
 <table class="table table-hover table-responsive">

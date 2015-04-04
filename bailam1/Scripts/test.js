@@ -17,6 +17,7 @@
 
 $(document).ready(function () {
     $("#MaKhoa").change(function () {
+        alert("aaaa");
         Loadcbx($("#MaKhoa").val());
     });
 });
