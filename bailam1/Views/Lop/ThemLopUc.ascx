@@ -21,14 +21,14 @@
     <label for="MaKhoa" class="col-sm-2 control-label">
         Khoa</label>
     <div class="col-sm-10">
-        <%=Html.DropDownList("MaKhoa", Model.listKhoa, new object { })%>
+        <%=Html.DropDownList("MaKhoa", Model.listKhoa)%>
     </div>
 </div>
 <div class="form-group">
     <label for="MaChuyenNganh" class="col-sm-2 control-label">
         Chuyên ngành</label>
     <div class="col-sm-10" id="Loadcbx">
-        <%=Html.DropDownList("MaChuyenNganh", Model.listChuyenNganh)%></div>
+    </div>
 </div>
 <div class="form-group">
     <label for="MaNienKhoa" class="col-sm-2 control-label">
