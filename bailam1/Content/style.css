@@ -678,7 +678,9 @@ span.nav-description{
 #main-navigation.style2>ul>li:hover>a,
 #main-navigation.style2>ul>li:hover,
 #main-navigation.style2>ul>li.current-item,
-#main-navigation.style2>ul>li.current-item>a{
+#main-navigation.style2>ul>li.current-item>a
+{
+    	text-decoration:none;
 	background:#34495e!important;
 }
 
@@ -747,6 +749,7 @@ span.nav-description{
 	padding:8px 20px;
 	color:#fff;
 	display:block;
+		text-decoration:none;
 }
 
 #main-navigation li ul.normal-dropdown li:hover>a{
@@ -816,7 +819,9 @@ span.nav-description{
 	background:#e74c3c;
 }
 
-#main-navigation li.blue>a, #main-navigation .blue ul.wide-dropdown, #main-navigation li.blue{
+#main-navigation li.blue>a, #main-navigation .blue ul.wide-dropdown, #main-navigation li.blue
+{
+    text-decoration:none;
 	background:#3498db;
 }
 

@@ -14,7 +14,7 @@ namespace bailam1.Controllers
     {
         //
         // GET: /Lop/
-
+        
         DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
         KhoaBussiness _KHOA = new KhoaBussiness();
         LopBussiness _LOP = new LopBussiness();

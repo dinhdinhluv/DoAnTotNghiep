@@ -32,10 +32,14 @@
                 </ul>
             </li>
             <li class="blue">
-                <a href="<% %>"><span class="nav-description">Quản lý lớp</span></a>
+                <a href="/Lop/DanhSachLop"><span class="nav-description">Quản lý lớp</span></a>
             </li>
             <li class="blue">
-                <a href="#"><span class="nav-description">Danh mục phòng thi</span></a>
+                <a href="#"><span class="nav-description">Quản lý phòng thi</span></a>
+                <ul class="normal-dropdown normalAnimation">
+                    <li><a href="#">Danh sách phòng thi</a></li>
+                    <li><a href="#">Phân phòng thi</a></li>
+                </ul>
             </li>
             <li class="blue">
                 <a href="#"><span class="nav-description">Quản lý điểm</span></a>
