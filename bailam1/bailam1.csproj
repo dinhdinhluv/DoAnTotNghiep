@@ -71,12 +71,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\LopController.cs" />
+    <Compile Include="Controllers\SinhVienController.cs" />
+    <Compile Include="Function\DanhMucFunction.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
     <Compile Include="Function\LopBussiness.cs" />
+    <Compile Include="Function\SinhVienFunction.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FormModel\KHOA_DMKhoaForm.cs" />
+    <Compile Include="Models\FormModel\SinhVienForm.cs" />
     <Compile Include="Models\LinQ\DataQLSV.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,14 +106,39 @@
     <Content Include="Content\js\npm.js" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
+    <Content Include="HinhSV\2222.jpg" />
+    <Content Include="HinhSV\CNMG\21.jpg" />
+    <Content Include="HinhSV\CNMG\da.jpg" />
+    <Content Include="HinhSV\CNMG\K8GD\aa.jpg" />
+    <Content Include="HinhSV\CNMG\K8GD\dsaa.jpg" />
+    <Content Include="HinhSV\CNMG\K8GD\dsaad.jpg" />
+    <Content Include="HinhSV\CNTT\2.jpg" />
+    <Content Include="HinhSV\CNTT\aaa.jpg" />
+    <Content Include="HinhSV\CNTT\K11CNTT13\03.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\1.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\2.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\2222.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\aa.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\dsa.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT2\01.png" />
+    <Content Include="HinhSV\CNTT\K8CNTT2\02.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT2\04.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT2\add2.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT2\eqw.jpg" />
     <Content Include="img\cds.jpg" />
     <Content Include="img\chosen-sprite.png" />
     <Content Include="img\dark-blue-sky.jpg" />
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="img\header.jpg" />
     <Content Include="img\login_bg.png" />
+    <Content Include="img\photo.jpg" />
     <Content Include="img\Sasuke-s-Eternal-Mangekyou-Sharinga.jpg" />
     <Content Include="img\tong-cong-ty-sonadezi-1352889796.jpg" />
+    <Content Include="Scripts\JSQLSV.js" />
+    <Content Include="Views\Admin\ViewPage1.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Scripts\test.js" />
     <Content Include="Views\Lop\DanhSachLop.ascx" />
     <Content Include="Views\Lop\DanhSachLop.aspx" />
@@ -118,6 +147,13 @@
     <Content Include="Views\Lop\SuaLopUc.ascx" />
     <Content Include="Views\Lop\ThemLop.aspx" />
     <Content Include="Views\Lop\ThemLopUc.ascx" />
+    <Content Include="Views\SinhVien\Index.aspx" />
+    <Content Include="Views\SinhVien\loadcbxLop.ascx" />
+    <Content Include="Views\SinhVien\LoadlstSinhVien.ascx" />
+    <Content Include="Views\SinhVien\LoadSuaSinhVien.aspx" />
+    <Content Include="Views\SinhVien\LoadSuaSinhVienUc.ascx" />
+    <Content Include="Views\SinhVien\LoadThemSinhVienUc.ascx" />
+    <Content Include="Views\SinhVien\LoadThemSinhVien.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -138,9 +174,6 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\LogOnUserControl.ascx" />
-    <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +191,7 @@
       <LastGenOutput>DataQLSV.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Shared\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

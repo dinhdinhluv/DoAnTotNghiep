@@ -13,24 +13,28 @@
       <Column Name="NgayThem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NgaySua" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="IsDelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LOP_SINHVIEN" Member="SINHVIENs" ThisKey="MaLop" OtherKey="MaLop" Type="SINHVIEN" />
     </Type>
   </Table>
   <Table Name="dbo.DM_TONGIAO" Member="DM_TONGIAOs">
     <Type Name="DM_TONGIAO">
       <Column Name="MaTonGiao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenTonGiao" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_TONGIAO_SINHVIEN" Member="SINHVIENs" ThisKey="MaTonGiao" OtherKey="MaTonGiao" Type="SINHVIEN" />
     </Type>
   </Table>
   <Table Name="dbo.DM_QUEQUAN" Member="DM_QUEQUANs">
     <Type Name="DM_QUEQUAN">
       <Column Name="MaQueQuan" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenQueQuan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_QUEQUAN_SINHVIEN" Member="SINHVIENs" ThisKey="MaQueQuan" OtherKey="MaQueQuan" Type="SINHVIEN" />
     </Type>
   </Table>
   <Table Name="dbo.DM_DANTOC" Member="DM_DANTOCs">
     <Type Name="DM_DANTOC">
       <Column Name="MaDanToc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenDanToc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_DANTOC_SINHVIEN" Member="SINHVIENs" ThisKey="MaDanToc" OtherKey="MaDanToc" Type="SINHVIEN" />
     </Type>
   </Table>
   <Table Name="dbo.DM_CHUYENNGANH_THEO_KHOA" Member="DM_CHUYENNGANH_THEO_KHOAs">
@@ -46,6 +50,7 @@
       <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenKhoa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="DM_KHOA_DM_CHUYENNGANH_THEO_KHOA" Member="DM_CHUYENNGANH_THEO_KHOAs" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="DM_CHUYENNGANH_THEO_KHOA" />
+      <Association Name="DM_KHOA_SINHVIEN" Member="SINHVIENs" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="SINHVIEN" />
     </Type>
   </Table>
   <Table Name="dbo.DM_NIENKHOA" Member="DM_NIENKHOAs">
@@ -54,6 +59,36 @@
       <Column Name="MaNienKhoa" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenNienKhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ThoiGienNienKhoa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_NIENKHOA_SINHVIEN" Member="SINHVIENs" ThisKey="MaNienKhoa" OtherKey="MaNienKhoa" Type="SINHVIEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SINHVIEN" Member="SINHVIENs">
+    <Type Name="SINHVIEN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaSinhVien" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenSinhVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="MaQueQuan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaDanToc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTonGiao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MaKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaNienKhoa" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="NguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NguoiSua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DM_DANTOC_SINHVIEN" Member="DM_DANTOC" ThisKey="MaDanToc" OtherKey="MaDanToc" Type="DM_DANTOC" IsForeignKey="true" />
+      <Association Name="DM_KHOA_SINHVIEN" Member="DM_KHOA" ThisKey="MaKhoa" OtherKey="MaKhoa" Type="DM_KHOA" IsForeignKey="true" />
+      <Association Name="DM_NIENKHOA_SINHVIEN" Member="DM_NIENKHOA" ThisKey="MaNienKhoa" OtherKey="MaNienKhoa" Type="DM_NIENKHOA" IsForeignKey="true" />
+      <Association Name="DM_QUEQUAN_SINHVIEN" Member="DM_QUEQUAN" ThisKey="MaQueQuan" OtherKey="MaQueQuan" Type="DM_QUEQUAN" IsForeignKey="true" />
+      <Association Name="DM_TONGIAO_SINHVIEN" Member="DM_TONGIAO" ThisKey="MaTonGiao" OtherKey="MaTonGiao" Type="DM_TONGIAO" IsForeignKey="true" />
+      <Association Name="LOP_SINHVIEN" Member="LOP" ThisKey="MaLop" OtherKey="MaLop" Type="LOP" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

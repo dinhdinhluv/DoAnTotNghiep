@@ -61,6 +61,9 @@ function XoaLop(id) {
             }
         });
     }
+    else {
+        this.close();
+    }
 }
 
 function SuaLop() {

@@ -3,6 +3,7 @@
     Thêm lớp..
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="modal-dialog" id="themlop">      
+    <div class="modal-dialog" id="themlop">   
+        
     </div>
 </asp:Content>

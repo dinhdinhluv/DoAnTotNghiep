@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataQLSV">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.75" name="DataQLSV">
   <DataContextMoniker Name="/DataQLSVDataContext" />
   <nestedChildShapes>
     <classShape Id="1b6a934b-6038-4153-bd5b-e92d020150f6" absoluteBounds="3.5, 3.25, 2, 2.9247054036458331">
@@ -49,6 +49,54 @@
       <nodes>
         <classShapeMoniker Id="37eda469-5089-4878-9324-365672f64408" />
         <classShapeMoniker Id="4173aae2-8d9c-4531-b6db-472a3840e663" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="97385349-f201-4b2c-9fbf-c20dfff7d508" absoluteBounds="3.75, 7, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/DataQLSVDataContext/SINHVIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8700dfce-454d-4e72-81ae-e2d3f3dc0889" absoluteBounds="3.7649999999999997, 7.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 0.78125); (5.65625 : 0.78125); (5.65625 : 7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_DANTOC/DM_DANTOC_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="61e25eb5-9ba2-4e6c-bd08-4ee5781b8322" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.19399251302083); (3.125 : 2.56899251302083); (3.125 : 9.23155843098958); (3.75 : 9.23155843098958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_KHOA/DM_KHOA_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="37eda469-5089-4878-9324-365672f64408" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 4.32859537760417); (7.75 : 9.23155843098958); (5.75 : 9.23155843098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_NIENKHOA/DM_NIENKHOA_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="81cc7809-7145-4acf-85bf-1fd2dd051e2c" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.59059895833333); (3.04166666666667 : 6.59059895833333 : JumpStart); (3.36458333333333 : 6.59059895833333 : JumpEnd); (4.54166666666667 : 6.59059895833333 : JumpStart); (4.70833333333333 : 6.59059895833333 : JumpEnd); (5.6249975 : 6.59059895833333); (5.6249975 : 7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_QUEQUAN/DM_QUEQUAN_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="60400ac2-c28c-4452-972a-c9f8b863ca70" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.91276401652644); (3.06607443490112 : 5.22883845142756 : JumpStart); (3.18392556509888 : 5.34668958162532 : JumpEnd); (3.28125 : 5.44401401652644); (3.28125 : 8.08452721549479); (3.75 : 8.08452721549479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_TONGIAO/DM_TONGIAO_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="436609af-4cf2-469b-ab27-ad6eca3eeec8" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 6.17470540364583); (4.625 : 7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/LOP/LOP_SINHVIEN" />
+      <nodes>
+        <classShapeMoniker Id="1b6a934b-6038-4153-bd5b-e92d020150f6" />
+        <classShapeMoniker Id="97385349-f201-4b2c-9fbf-c20dfff7d508" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
