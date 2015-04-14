@@ -84,8 +84,8 @@ namespace bailam1.Controllers
             SinhVienForm.listLop = DanhMucFunction.BuildLop(Khoa, NienKhoa, "");
             return PartialView("~/Views/SinhVien/loadcbxLop.ascx", SinhVienForm);
         }
-
-
+        
+        [HttpPost]
         public JsonResult ThucHienThemSV(SinhVienForm SinhVienForm, HttpPostedFileBase HinhSV)
         {
             var Them = SinhVienFunction.ThucHienThemSV(SinhVienForm, HinhSV);

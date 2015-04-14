@@ -28,7 +28,7 @@
                 <a href="#"><span class="nav-description">Quản lý sinh viên</span></a>
                 <ul class="normal-dropdown normalAnimation">
                     <li><a href="#">Chuyển lớp</a></li>
-                    <li><a href="#">Danh mục sinh viên</a></li>
+                    <li><a href="/SinhVien/Index">Danh mục sinh viên</a></li>
                 </ul>
             </li>
             <li class="blue">

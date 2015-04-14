@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.SinhVienForm>" %>
+﻿<%@ Control Language="C#" runat="server" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.SinhVienForm>" %>
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {
@@ -17,7 +17,7 @@
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
 
-<form class="form-horizontal" action=""  id="formthemsinhvien" style="width:1024px">
+<form class="form-horizontal" action="" id="formthemsinhvien" style="width:1024px">
         <div class="row">
             <div class="col-lg-4 text-center">
                <div class="form-group">

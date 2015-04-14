@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="MaLop" class="col-sm-5 control-label">
+                    <label for="TenSinhVien" class="col-sm-5 control-label">
                         Tên sinh viên :</label>
                     <div class="col-sm-1">
                         <input type="text" id="txtTenSinhVien" name="TenSinhVien" value="<%: Model.TenSinhVien %>" />
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="khoa" class="col-sm-5 control-label">
+                    <label for="MaKhoa" class="col-sm-5 control-label">
                         Khoa :</label>
                     <div class="col-sm-1">
                         <%=Html.DropDownList("Khoa", Model.listKhoa)%>
@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Khoas" class="col-sm-5 control-label">
+                    <label for="MaNienKhoa" class="col-sm-5 control-label">
                         Khóa :</label>
                     <div class="col-sm-1">
                         <%=Html.DropDownList("NienKhoa", Model.listNienKhoa)%>

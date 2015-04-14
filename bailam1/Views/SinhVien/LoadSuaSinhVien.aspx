@@ -4,27 +4,13 @@
     LoadSinhVien
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script>
+    <script type="text/javascript">
     $(document).ready(function () {
         $("#txtMaSinhVien").attr("disabled", true);
         $("#Lop").attr("disabled", true);
         $("#NienKhoa").attr("disabled", true);
         $("#Khoa").attr("disabled", true);
     });
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah')
-                        .attr('src', e.target.result)
-                        .width(160)
-                        .height(240);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
     <div class="modal-dialog" id="suasinhvien">

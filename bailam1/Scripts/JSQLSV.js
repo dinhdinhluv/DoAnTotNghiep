@@ -130,7 +130,7 @@ function loadTroVe() {
     location.assign("/SinhVien/Index");
 }
 function ThucHienThemSV() {
-    var formData = new FormData($('#post')[0]);
+    var formData = new FormData($('#formthemsinhvien')[0]);
     $.ajax({
         url: '/SinhVien/ThucHienThemSV/',
         type: 'POST',
@@ -154,7 +154,7 @@ function ThucHienThemSV() {
 };
 
 function ThucHienSuaSV() {
-    var formData = new FormData($('#post')[0]);
+    var formData = new FormData($('#formsuasinhvien')[0]);
     $.ajax({
         url: '/SinhVien/ThucHienSuaSV/',
         type: 'POST',
