@@ -10,13 +10,14 @@
                         .width(160)
                         .height(240);
                 };
-
+                
                 reader.readAsDataURL(input.files[0]);
             }
         }
 </script>
+<script src="../../Content/js/bootstrap-datepicker.js" type="text/javascript"></script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
-
+    
 <form class="form-horizontal" action=""  id="formthemsinhvien" style="width:1024px">
         <div class="row">
             <div class="col-lg-4 text-center">
@@ -37,9 +38,13 @@
                 <div class="form-group">
                     <label for="NgaySinh" class="col-sm-5 control-label">
                         Ngày sinh :</label>
-                    <div class="col-sm-1">
-                        <input type="text" id="txtNgaySinh" name="NgaySinh" value="<%: Model.NgaySinh %>" />
-                    </div>
+                    <div class='input-group date' id='datepicker'>
+                    <input type='text' class="form-control"  value="<%: Model.NgaySinh %>"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    
+                </div>
                 </div>
                 <div class="form-group">
                     <label for="GioiTinh" class="col-sm-5 control-label">

@@ -56,7 +56,7 @@ namespace bailam1.Controllers
             return View("~/Views/Lop/ThemLop.aspx");
         }
 
-        public ActionResult ThemLopAjax()//day nè V nó load ra themlopUC
+        public ActionResult ThemLopAjax()
         {
             var frmThemLop = new KHOA_DMKhoaForm();
             frmThemLop.listKhoa = _KHOA.BuildKhoa(frmThemLop.MaKhoa);

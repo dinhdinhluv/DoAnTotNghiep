@@ -1,24 +1,27 @@
 ﻿.hinhnen
 {
-    background-image:url(../../img/dark-blue-sky.jpg);
-    background-repeat:no-repeat;
-    font-size:x-small;
+    background-color: #00476d;
+    background-image: url(../../img/gridbg.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .d1
 {
-    height:128px;
+    height:200px;
     margin:auto;
 }
 .d2
 {
-    height:267px;
+    height:300px;
     margin:auto;
     vertical-align:middle;
 }
 .dangnhap
 {
+    background-image:url('../../img/login_bg.png');
     width:560px;
-    height:250px;
+    height:293px;
     margin:auto;
     padding-top:20px;
 }
@@ -113,6 +116,7 @@ h2
 h3
 {
     font-size: 1.2em;
+    width: 415px;
 }
 h4
 {
@@ -420,4 +424,10 @@ dd a{
 ul{
 	list-style:none;
 	padding:5px 0px 0px 30px ;
+}
+.logosona
+{
+    width:413px;
+    height:195px;
+    margin:auto;
 }

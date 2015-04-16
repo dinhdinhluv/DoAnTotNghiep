@@ -5,8 +5,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-<%--    <script>
+    <script src="../../Content/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <%--<script>
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -21,8 +21,10 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>--%>
     <div class="modal-dialog" id="themsinhvien" style="width:1024px;">
     </div>
+
 </asp:Content>

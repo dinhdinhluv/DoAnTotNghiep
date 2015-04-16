@@ -177,3 +177,10 @@ function ThucHienSuaSV() {
 
     });
 };
+
+$(function () {
+  $('.datepicker').datepicker({ format: "dd//mm/yyyy" }).on('changeDate', function (ev) {
+    $(this).datepicker('hide');
+  });
+});
+
