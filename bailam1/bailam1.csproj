@@ -106,26 +106,10 @@
     <Content Include="Content\js\npm.js" />
     <Content Include="Content\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="HinhSV\2222.jpg" />
-    <Content Include="HinhSV\CNMG\21.jpg" />
-    <Content Include="HinhSV\CNMG\da.jpg" />
-    <Content Include="HinhSV\CNMG\K8GD\aa.jpg" />
-    <Content Include="HinhSV\CNMG\K8GD\dsaa.jpg" />
-    <Content Include="HinhSV\CNMG\K8GD\dsaad.jpg" />
-    <Content Include="HinhSV\CNTT\2.jpg" />
-    <Content Include="HinhSV\CNTT\aaa.jpg" />
     <Content Include="HinhSV\CNTT\K11CNTT13\03.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\1.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\2.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\2222.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\aa.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT1\dsa.jpg" />
+    <Content Include="HinhSV\CNTT\K8CNTT1\1210090002.jpg" />
     <Content Include="HinhSV\CNTT\K8CNTT2\01.png" />
-    <Content Include="HinhSV\CNTT\K8CNTT2\02.jpg" />
     <Content Include="HinhSV\CNTT\K8CNTT2\04.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT2\add2.jpg" />
-    <Content Include="HinhSV\CNTT\K8CNTT2\eqw.jpg" />
     <Content Include="img\cds.jpg" />
     <Content Include="img\chosen-sprite.png" />
     <Content Include="img\dark-blue-sky.jpg" />
@@ -178,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="HinhSV\CNMG\K8GD\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\css\bootstrap-theme.css.map" />

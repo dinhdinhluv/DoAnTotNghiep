@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<bailam1.Models.FormModel.SinhVienForm>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Index
@@ -13,15 +13,14 @@
         <div class="panel-body">
             <select name='phanloai' id="cbxPhanLoaiSeach">
                 <option value='0'>
-                    Mã Sinh Viên
+                    Tìm theo mã sinh viên
                 </option>
                 <option value='1'>
-                   Mã Lớp Sinh Viên
+                   Tìm theo mã lớp
                 </option>
             </select>
             <input type="text" placeholder="--Tìm kiếm--" id="txtseach" class="form-control"onkeypress="javascript:if (event.keyCode==13) { ClickPhanLoaiSeach(); }"/>
-            <input id="btseach" type="button" value="Tìm" onclick="ClickPhanLoaiSeach();" />
-
+            <%--<input id="btseach" type="button" value="Tìm" onclick="ClickPhanLoaiSeach();" />--%>
             <div id="LoadlstSinhVien"></div>
             
         </div>

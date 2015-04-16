@@ -15,7 +15,7 @@ namespace bailam1.Function
         public KHOA_DMKhoaForm getAllLop()
         {
             var t = new KHOA_DMKhoaForm();
-            var lstLop = _QLSVData.LOPs.Where(a => a.IsDelete == Convert.ToBoolean("False")).ToList();
+            var lstLop = _QLSVData.LOPs.Where(a => a.IsDelete == Convert.ToBoolean("False")).ToList().OrderByDescending(a=>a.NgayThem);
             var svf = new List<KHOA_DMKhoaForm>();
             foreach (var i in lstLop)
             {
