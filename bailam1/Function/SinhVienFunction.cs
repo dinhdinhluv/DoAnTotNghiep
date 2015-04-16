@@ -119,7 +119,7 @@ namespace bailam1.Function
         /*----------------------------------------------------------*/
         public bool ThucHienThemSV(SinhVienForm SinhVienForm, HttpPostedFileBase HinhSV)
         {
-            bool kt = true;   
+            bool kt = true;
             string duoihinh = Path.GetExtension(HinhSV.FileName);
             SinhVienForm.HinhAnh = SinhVienForm.MaSinhVien + duoihinh;
             var SV = new SINHVIEN();

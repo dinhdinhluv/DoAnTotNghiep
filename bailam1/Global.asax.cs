@@ -16,13 +16,6 @@ namespace bailam1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            /// http://sever/Admin
-            routes.MapRoute(
-                "Admin Route", // Route name
-                "Admin/{action}/{id}", // URL with parameters
-                new { controller = "Admin", action = "ViewPage1", id = UrlParameter.Optional } // Parameter defaults
-            );
-
             /// http://sever/SinhVien
             routes.MapRoute(
                 "SinhVien Route", // Route name
