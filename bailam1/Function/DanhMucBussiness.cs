@@ -9,7 +9,7 @@ using bailam1.Models.FormModel;
 
 namespace bailam1.Function
 {
-    public class DanhMucFunction
+    public class DanhMucBussiness
     {
 
         readonly DataQLSVDataContext _QLSVData = new DataQLSVDataContext();

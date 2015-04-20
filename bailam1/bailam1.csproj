@@ -74,11 +74,11 @@
     <Compile Include="Controllers\DiemController.cs" />
     <Compile Include="Controllers\LopController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
-    <Compile Include="Function\DanhMucFunction.cs" />
+    <Compile Include="Function\DanhMucBussiness.cs" />
     <Compile Include="Function\DiemBussiness.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
     <Compile Include="Function\LopBussiness.cs" />
-    <Compile Include="Function\SinhVienFunction.cs" />
+    <Compile Include="Function\SinhVienBussiness.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

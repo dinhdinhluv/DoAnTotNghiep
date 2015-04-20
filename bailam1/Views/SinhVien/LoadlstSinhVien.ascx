@@ -108,7 +108,7 @@
                     var pagerOptions = new PagerOptions();
                 %>
                 <div id="Pager">
-                <% bailam1.Function.SinhVienFunction sv = new bailam1.Function.SinhVienFunction(); %>
+                <% bailam1.Function.SinhVienBussiness sv = new bailam1.Function.SinhVienBussiness(); %>
                     <% sv.ChangeTextPaging(pagerOptions, "pageIndex"); %>
                     <%= Html.Pager(Model.Page_lstSV, pagerOptions)%></div>
                 <%= Html.Hidden("pageIndex", Model.PageNumber)%>
