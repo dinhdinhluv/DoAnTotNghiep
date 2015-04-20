@@ -70,9 +70,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DiemController.cs" />
     <Compile Include="Controllers\LopController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
     <Compile Include="Function\DanhMucFunction.cs" />
+    <Compile Include="Function\DiemBussiness.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
     <Compile Include="Function\LopBussiness.cs" />
     <Compile Include="Function\SinhVienFunction.cs" />
@@ -110,6 +113,7 @@
     <Content Include="HinhSV\CNTT\K8CNTT1\1210090002.jpg" />
     <Content Include="HinhSV\CNTT\K8CNTT2\01.png" />
     <Content Include="HinhSV\CNTT\K8CNTT2\04.jpg" />
+    <Content Include="HinhSV\QT\K8KT\1210090004.jpg" />
     <Content Include="img\cds.jpg" />
     <Content Include="img\chosen-sprite.png" />
     <Content Include="img\dark-blue-sky.jpg" />
@@ -162,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="HinhSV\CNMG\K8GD\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\css\bootstrap-theme.css.map" />

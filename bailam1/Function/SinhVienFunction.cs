@@ -64,24 +64,24 @@ namespace bailam1.Function
         public List<SinhVienForm> lstSinhVienTheoMaLop(string MaLop)
         {
             var lst = new List<SinhVienForm>();
-                var SinhVien = _QLSVData.SINHVIENs.Where(a => a.MaLop.Contains(MaLop)).ToList();
-                
-                foreach (var SV in SinhVien)
-                {
-                    var SinhVienForm = new SinhVienForm();
-                    SinhVienForm.MaSinhVien = SV.MaSinhVien;
-                    SinhVienForm.TenSinhVien = SV.TenSinhVien;
-                    if (SV.GioiTinh == true)
-                        SinhVienForm.GioiTinh = "Nam";
-                    else
-                        SinhVienForm.GioiTinh = "Nữ";
-                    SinhVienForm.NgaySinh = SV.NgaySinh;
-                    var QueQuan = _QLSVData.DM_QUEQUANs.FirstOrDefault(a => a.MaQueQuan == SV.MaQueQuan);
-                    SinhVienForm.QueQuan = QueQuan.TenQueQuan;
-                    var Lop = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop == SV.MaLop);
-                    SinhVienForm.Lop = Lop.TenLop;
-                    lst.Add(SinhVienForm);
-                }
+            var SinhVien = _QLSVData.SINHVIENs.Where(a => a.MaLop.Contains(MaLop)).ToList();
+
+            foreach (var SV in SinhVien)
+            {
+                var SinhVienForm = new SinhVienForm();
+                SinhVienForm.MaSinhVien = SV.MaSinhVien;
+                SinhVienForm.TenSinhVien = SV.TenSinhVien;
+                if (SV.GioiTinh == true)
+                    SinhVienForm.GioiTinh = "Nam";
+                else
+                    SinhVienForm.GioiTinh = "Nữ";
+                SinhVienForm.NgaySinh = SV.NgaySinh;
+                var QueQuan = _QLSVData.DM_QUEQUANs.FirstOrDefault(a => a.MaQueQuan == SV.MaQueQuan);
+                SinhVienForm.QueQuan = QueQuan.TenQueQuan;
+                var Lop = _QLSVData.LOPs.FirstOrDefault(a => a.MaLop == SV.MaLop);
+                SinhVienForm.Lop = Lop.TenLop;
+                lst.Add(SinhVienForm);
+            }
             return lst;
         }
 

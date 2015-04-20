@@ -16,7 +16,7 @@
     <div class="d1"></div>
     <div class="d2 row-fluid">
     <div class="dangnhap" align="center">
-        <form class="form-horizontal" method="post" style="margin-top:60px;">
+        <form action="" class="form-horizontal" method="post" style="margin-top:60px;">
             <fieldset>
                 <div class="input-prepend" title="Tài khoản đăng nhập" >
                     <span class="add-on" style="height:27px;">
