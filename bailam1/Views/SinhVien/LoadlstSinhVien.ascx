@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.DanhSachSinhVien>" %>
 <%@ Import Namespace="Webdiyer.WebControls.Mvc" %>
 
-<script type="text/javascript">
+<script>
     $('#Pager a').click(function () {
         if (this.href != "") {
             $.ajax({

@@ -14,13 +14,9 @@ namespace bailam1.Controllers
 {
     public class SinhVienController : Controller
     {
-<<<<<<< HEAD
-        SinhVienBussiness SinhVienFunction = new SinhVienBussiness();
-        DanhMucBussiness DanhMucFunction = new DanhMucBussiness();
-=======
         SinhVienBussiness SinhVienBussiness = new SinhVienBussiness();
         DanhMucBussiness DanhMucBussiness = new DanhMucBussiness();
->>>>>>> origin/master
+
         public ActionResult Index()
         {
             return View();
