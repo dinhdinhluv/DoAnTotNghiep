@@ -14,8 +14,13 @@ namespace bailam1.Controllers
 {
     public class SinhVienController : Controller
     {
+<<<<<<< HEAD
         SinhVienBussiness SinhVienFunction = new SinhVienBussiness();
         DanhMucBussiness DanhMucFunction = new DanhMucBussiness();
+=======
+        SinhVienBussiness SinhVienBussiness = new SinhVienBussiness();
+        DanhMucBussiness DanhMucBussiness = new DanhMucBussiness();
+>>>>>>> origin/master
         public ActionResult Index()
         {
             return View();
@@ -24,7 +29,7 @@ namespace bailam1.Controllers
         public ActionResult LoadlstSinhVien(int? pageIndex)
         {
             var DanhSachSinhVien = new DanhSachSinhVien();
-            var lstSinhVien = SinhVienFunction.lstSinhVienAll();
+            var lstSinhVien = SinhVienBussiness.lstSinhVienAll();
             DanhSachSinhVien.PageNumber = pageIndex ?? 1;
             DanhSachSinhVien.Page_lstSV = new PagedList<SinhVienForm>(lstSinhVien, DanhSachSinhVien.PageNumber,10);
             return PartialView("~/Views/SinhVien/LoadlstSinhVien.ascx", DanhSachSinhVien);
@@ -33,7 +38,7 @@ namespace bailam1.Controllers
         public ActionResult SeachTheoMaSV(int? pageIndex, string MaSV)
         {
             var DanhSachSinhVien = new DanhSachSinhVien();
-            var lstSinhVien = SinhVienFunction.lstSinhVienTheoMaSV(MaSV);
+            var lstSinhVien = SinhVienBussiness.lstSinhVienTheoMaSV(MaSV);
             DanhSachSinhVien.PageNumber = pageIndex ?? 1;
             DanhSachSinhVien.Page_lstSV = new PagedList<SinhVienForm>(lstSinhVien, DanhSachSinhVien.PageNumber, 5);
             return PartialView("~/Views/SinhVien/LoadlstSinhVien.ascx", DanhSachSinhVien);
@@ -42,7 +47,7 @@ namespace bailam1.Controllers
         public ActionResult SeachTheoMaLop(int? pageIndex, string MaLop)
         {
             var DanhSachSinhVien = new DanhSachSinhVien();
-            var lstSinhVien = SinhVienFunction.lstSinhVienTheoMaLop(MaLop);
+            var lstSinhVien = SinhVienBussiness.lstSinhVienTheoMaLop(MaLop);
             DanhSachSinhVien.PageNumber = pageIndex ?? 1;
             DanhSachSinhVien.Page_lstSV = new PagedList<SinhVienForm>(lstSinhVien, DanhSachSinhVien.PageNumber,5);
             return PartialView("~/Views/SinhVien/LoadlstSinhVien.ascx", DanhSachSinhVien);
@@ -50,14 +55,14 @@ namespace bailam1.Controllers
 
         public ActionResult LoadSuaSinhVien(string MaSV)
         {
-            var SV = SinhVienFunction.SinhVienTheoMaSV(MaSV);
-            SV.listGioiTinh = DanhMucFunction.BuildGioiTinh(SV.GioiTinh);
-            SV.listQueQuan = DanhMucFunction.BuildQueQuan(Convert.ToInt32(SV.QueQuan));
-            SV.listDanToc = DanhMucFunction.BuildDanToc(Convert.ToInt32(SV.DanToc));
-            SV.listTonGiao = DanhMucFunction.BuildTonGiao(Convert.ToInt32(SV.TonGiao));
-            SV.listKhoa = DanhMucFunction.BuildKhoa(SV.Khoa);
-            SV.listNienKhoa = DanhMucFunction.BuildNienKhoa(SV.NienKhoa);
-            SV.listLop = DanhMucFunction.BuildLop(SV.Khoa,SV.NienKhoa,SV.Lop);
+            var SV = SinhVienBussiness.SinhVienTheoMaSV(MaSV);
+            SV.listGioiTinh = DanhMucBussiness.BuildGioiTinh(SV.GioiTinh);
+            SV.listQueQuan = DanhMucBussiness.BuildQueQuan(Convert.ToInt32(SV.QueQuan));
+            SV.listDanToc = DanhMucBussiness.BuildDanToc(Convert.ToInt32(SV.DanToc));
+            SV.listTonGiao = DanhMucBussiness.BuildTonGiao(Convert.ToInt32(SV.TonGiao));
+            SV.listKhoa = DanhMucBussiness.BuildKhoa(SV.Khoa);
+            SV.listNienKhoa = DanhMucBussiness.BuildNienKhoa(SV.NienKhoa);
+            SV.listLop = DanhMucBussiness.BuildLop(SV.Khoa,SV.NienKhoa,SV.Lop);
 
             return View("~/Views/SinhVien/LoadSuaSinhVienUc.ascx",SV);
         }
@@ -68,33 +73,33 @@ namespace bailam1.Controllers
         public ActionResult LoadThemSinhVien()
         {
             var SV = new SinhVienForm();
-            SV.listGioiTinh = DanhMucFunction.BuildGioiTinh("");
-            SV.listQueQuan = DanhMucFunction.BuildQueQuan(0);
-            SV.listDanToc = DanhMucFunction.BuildDanToc(0);
-            SV.listTonGiao = DanhMucFunction.BuildTonGiao(0);
-            SV.listKhoa = DanhMucFunction.BuildKhoa("");
-            SV.listNienKhoa = DanhMucFunction.BuildNienKhoa("");
-            SV.listLop = DanhMucFunction.BuildLop("","", "");
+            SV.listGioiTinh = DanhMucBussiness.BuildGioiTinh("");
+            SV.listQueQuan = DanhMucBussiness.BuildQueQuan(0);
+            SV.listDanToc = DanhMucBussiness.BuildDanToc(0);
+            SV.listTonGiao = DanhMucBussiness.BuildTonGiao(0);
+            SV.listKhoa = DanhMucBussiness.BuildKhoa("");
+            SV.listNienKhoa = DanhMucBussiness.BuildNienKhoa("");
+            SV.listLop = DanhMucBussiness.BuildLop("","", "");
 
             return View("~/Views/SinhVien/LoadThemSinhVienUc.ascx",SV);
         }
         public ActionResult loadcbxLop(string Khoa,string NienKhoa)
         {
             SinhVienForm SinhVienForm = new SinhVienForm();
-            SinhVienForm.listLop = DanhMucFunction.BuildLop(Khoa, NienKhoa, "");
+            SinhVienForm.listLop = DanhMucBussiness.BuildLop(Khoa, NienKhoa, "");
             return PartialView("~/Views/SinhVien/loadcbxLop.ascx", SinhVienForm);
         }
         
         [HttpPost]
         public JsonResult ThucHienThemSV(SinhVienForm SinhVienForm, HttpPostedFileBase HinhSV)
         {
-            var Them = SinhVienFunction.ThucHienThemSV(SinhVienForm, HinhSV);
+            var Them = SinhVienBussiness.ThucHienThemSV(SinhVienForm, HinhSV);
             return Json(Them, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult ThucHienSuaSV(SinhVienForm SinhVienForm, HttpPostedFileBase HinhSV)
         {
-            var Sua = SinhVienFunction.ThucHienSuaSV(SinhVienForm,HinhSV);
+            var Sua = SinhVienBussiness.ThucHienSuaSV(SinhVienForm,HinhSV);
             return Json(Sua, JsonRequestBehavior.AllowGet);
         }
     }

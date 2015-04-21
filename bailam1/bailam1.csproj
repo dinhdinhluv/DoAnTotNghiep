@@ -74,7 +74,10 @@
     <Compile Include="Controllers\DiemController.cs" />
     <Compile Include="Controllers\LopController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
+<<<<<<< HEAD
     <Compile Include="Function\cbxDiemBussiness.cs" />
+=======
+>>>>>>> origin/master
     <Compile Include="Function\DanhMucBussiness.cs" />
     <Compile Include="Function\DiemBussiness.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
