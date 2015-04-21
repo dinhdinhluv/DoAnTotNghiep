@@ -10,7 +10,7 @@ using bailam1.Models.FormModel;
 
 namespace bailam1.Function
 {
-    public class SinhVienFunction
+    public class SinhVienBussiness
     {
         readonly DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
 

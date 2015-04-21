@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.DanhSachSinhVien>" %>
 <%@ Import Namespace="Webdiyer.WebControls.Mvc" %>
 
-<script>
+<script type="text/javascript">
     $('#Pager a').click(function () {
         if (this.href != "") {
             $.ajax({
@@ -108,7 +108,7 @@
                     var pagerOptions = new PagerOptions();
                 %>
                 <div id="Pager">
-                <% bailam1.Function.SinhVienFunction sv = new bailam1.Function.SinhVienFunction(); %>
+                <% bailam1.Function.SinhVienBussiness sv = new bailam1.Function.SinhVienBussiness(); %>
                     <% sv.ChangeTextPaging(pagerOptions, "pageIndex"); %>
                     <%= Html.Pager(Model.Page_lstSV, pagerOptions)%></div>
                 <%= Html.Hidden("pageIndex", Model.PageNumber)%>
