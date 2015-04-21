@@ -23,6 +23,13 @@ namespace bailam1
                 new { controller = "SinhVien", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            /// http://sever/Diem
+            routes.MapRoute(
+                "Diem Route", // Route name
+                "Diem/{action}/{id}", // URL with parameters
+                new { controller = "Diem", action = "DiemTheoPhongThi", id = UrlParameter.Optional } // Parameter defaults
+            );
+
             /// http://sever/Admin
             routes.MapRoute(
                 "Admin Route", // Route name

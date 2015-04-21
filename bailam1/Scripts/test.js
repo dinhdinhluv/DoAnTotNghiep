@@ -24,6 +24,9 @@ $(document).ready(function () {
 
 
 
+
+
+
 function ThemLop() {
 //    document.forms[0].action = '/Lop/Themlop/';
 //    document.forms[0].method = 'post';

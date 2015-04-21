@@ -26,25 +26,16 @@ namespace bailam1.Function
                 a.NgayThem = Convert.ToDateTime(i.NgayThem);
 
                 a.MaChuyenNganh = i.MaChuyenNganh;
-                var w = _QLSVData.DM_CHUYENNGANH_THEO_KHOAs.Where(h => h.MaChuyenNganh == i.MaChuyenNganh);
-                foreach (var e in w)
-                {
-                    a.TenChuyenNganh = e.TenChuyenNganh;
-                }
-
+                var w = _QLSVData.DM_CHUYENNGANH_THEO_KHOAs.FirstOrDefault(h => h.MaChuyenNganh == i.MaChuyenNganh);
+                a.TenChuyenNganh = w.TenChuyenNganh;
+                
                 a.MaKhoa = i.MaKhoa;
-                var p = _QLSVData.DM_KHOAs.Where(h => h.MaKhoa == i.MaKhoa);
-                foreach (var e in p)
-                {
-                    a.TenKhoa = e.TenKhoa;
-                }
+                var p = _QLSVData.DM_KHOAs.FirstOrDefault(h => h.MaKhoa == i.MaKhoa);
+                a.TenKhoa = p.TenKhoa;
 
-                var q = _QLSVData.DM_NIENKHOAs.Where(h => h.MaNienKhoa == i.MaNienKhoa);
-                foreach (var k in q)
-                {
-                    a.ThoiGianNienKhoa = k.ThoiGienNienKhoa;
-                }
-
+                var q = _QLSVData.DM_NIENKHOAs.FirstOrDefault(h => h.MaNienKhoa == i.MaNienKhoa);
+                a.ThoiGianNienKhoa = q.ThoiGienNienKhoa;
+               
                 svf.Add(a);
 
 
