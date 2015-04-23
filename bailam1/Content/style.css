@@ -849,7 +849,7 @@ span.nav-description{
 
 
 #main-navigation .nav-search{
-	z-index:2000;
+	z-index:1;
 	position:relative;
 	cursor:pointer;
 	width:70px;

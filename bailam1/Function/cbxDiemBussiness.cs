@@ -43,7 +43,7 @@ namespace bailam1.Function
             foreach (var item in lstMonChuyenNganh)
             {
                 var lst = _QLSVData.DM_MONHOCs.FirstOrDefault(a => a.MaMonHoc == item.MaMonHoc);
-                selectList.Add(new { Value = item.MaMonTheoChuyenNganh, Text = lst.TenMonHoc+"("+item.MaNienKhoa+")"});
+                selectList.Add(new { Value = item.MaMonTheoChuyenNganh, Text = lst.TenMonHoc+"_"+"("+item.MaNienKhoa+")"});
             }
 
             return new SelectList(selectList, "Value", "Text", "");

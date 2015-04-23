@@ -73,18 +73,27 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DiemController.cs" />
     <Compile Include="Controllers\LopController.cs" />
+    <Compile Include="Controllers\MonHocController.cs" />
+    <Compile Include="Controllers\MonHocTheoChuyenNganhController.cs" />
+    <Compile Include="Controllers\PhanPhongThiController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
     <Compile Include="Function\cbxDiemBussiness.cs" />
     <Compile Include="Function\DanhMucBussiness.cs" />
     <Compile Include="Function\DiemBussiness.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
     <Compile Include="Function\LopBussiness.cs" />
+    <Compile Include="Function\MonHocBussiness.cs" />
+    <Compile Include="Function\MonHocTheoChuyenNganhBussiness.cs" />
+    <Compile Include="Function\PhanPhongThiBussiness.cs" />
     <Compile Include="Function\SinhVienBussiness.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FormModel\DiemForm.cs" />
     <Compile Include="Models\FormModel\KHOA_DMKhoaForm.cs" />
+    <Compile Include="Models\FormModel\MonHocForm.cs" />
+    <Compile Include="Models\FormModel\MonHocTheoChuyenNganhForm.cs" />
+    <Compile Include="Models\FormModel\PhanPhongThiForm.cs" />
     <Compile Include="Models\FormModel\SinhVienForm.cs" />
     <Compile Include="Models\LinQ\DataQLSV.designer.cs">
       <AutoGen>True</AutoGen>
@@ -138,16 +147,17 @@
     <Content Include="Views\Lop\SuaLopUc.ascx" />
     <Content Include="Views\Lop\Themlop.aspx" />
     <Content Include="Views\Lop\ThemLopUc.ascx" />
+    <Content Include="Views\MonHocTheoChuyenNganh\Index.aspx" />
+    <Content Include="Views\MonHocTheoChuyenNganh\LoadcbxChuyenNganh.ascx" />
+    <Content Include="Views\MonHocTheoChuyenNganh\LoadlstMonHocTheoChuyenNganh.ascx" />
+    <Content Include="Views\MonHocTheoChuyenNganh\LoadThemMonChuyenNganh.ascx" />
+    <Content Include="Views\MonHoc\DM_MonHoc.aspx" />
+    <Content Include="Views\MonHoc\Index.aspx" />
+    <Content Include="Views\MonHoc\LoadlstDM_MonHoc.ascx" />
+    <Content Include="Views\MonHoc\ThemMon.ascx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\LogOnUserControl.ascx" />
     <Content Include="Scripts\test.js" />
-    <Content Include="Views\Shared\Lop\DanhSachLop.ascx" />
-    <Content Include="Views\Shared\Lop\DanhSachLop.aspx" />
-    <Content Include="Views\Shared\Lop\loadchuyennganh.ascx" />
-    <Content Include="Views\Shared\Lop\SuaLop.aspx" />
-    <Content Include="Views\Shared\Lop\SuaLopUc.ascx" />
-    <Content Include="Views\Shared\Lop\ThemLop.aspx" />
-    <Content Include="Views\Shared\Lop\ThemLopUc.ascx" />
     <Content Include="Views\SinhVien\Index.aspx" />
     <Content Include="Views\SinhVien\loadcbxLop.ascx" />
     <Content Include="Views\SinhVien\LoadlstSinhVien.ascx" />

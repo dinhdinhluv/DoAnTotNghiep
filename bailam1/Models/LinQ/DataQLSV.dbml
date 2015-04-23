@@ -112,6 +112,7 @@
       <Column Name="DVHT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" Member="PHANPHONGTHIs" ThisKey="MaMonTheoChuyenNganh" OtherKey="MaMonHocTheoChuyenNganh" Type="PHANPHONGTHI" />
       <Association Name="DM_MONHOC_PHANMON_THEO_CHUYENNGANH" Member="DM_MONHOC" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="DM_MONHOC" IsForeignKey="true" />
+      <Association Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH" Member="DM_HOCKY" ThisKey="MaHocKy" OtherKey="MaHK" Type="DM_HOCKY" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHANPHONGTHI" Member="PHANPHONGTHIs">
@@ -141,6 +142,13 @@
       <Column Name="MaPhongThi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenPhong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="DM_PHONGTHI_PHANPHONGTHI" Member="PHANPHONGTHIs" ThisKey="MaPhongThi" OtherKey="MaPhongThi" Type="PHANPHONGTHI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_HOCKY" Member="DM_HOCKies">
+    <Type Name="DM_HOCKY">
+      <Column Name="MaHK" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH" Member="PHANMON_THEO_CHUYENNGANHs" ThisKey="MaHK" OtherKey="MaHocKy" Type="PHANMON_THEO_CHUYENNGANH" />
     </Type>
   </Table>
 </Database>

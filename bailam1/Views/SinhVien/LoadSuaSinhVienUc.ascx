@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.SinhVienForm>" %>
 <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $("#txtMaSinhVien").attr("disabled", true);
             $("#Lop").attr("disabled", true);

@@ -19,6 +19,7 @@ namespace bailam1.Function
             foreach (var i in lstDiem)
             {
                 DiemForm d = new DiemForm();
+                
                 d.MaSinhVien = i.MaSV;   //mã sv
                 var w = _QLSVData.SINHVIENs.FirstOrDefault(m => m.MaSinhVien == i.MaSV);
                 d.TenSinhVien = w.TenSinhVien; //tên sv
@@ -28,6 +29,7 @@ namespace bailam1.Function
                 var ss = _QLSVData.DIEM_TBMONs.FirstOrDefault(a => a.MaSinhVien == i.MaSV);
                 d.DTB1 = ss.DiemTBLan1.ToString(); //diem lan 1
                 d.DTB2 = ss.DiemTBLan2.ToString(); //diem lan 2
+                d.ID = ss.ID;
 
                 var p = _QLSVData.DM_KHOAs.FirstOrDefault(h => h.MaKhoa == w.MaKhoa);
                 d.MaKhoa = w.MaKhoa; //ma khoa
@@ -42,6 +44,30 @@ namespace bailam1.Function
             }
             t.DSDIEM = df;
             return t;
+        }
+
+
+
+
+        public bool SuaDiem(DiemForm DMDIEM)
+        {
+            var Diem = _QLSVData.DIEM_TBMONs.FirstOrDefault(t => t.ID == DMDIEM.ID);
+            if (Diem != null)
+            {
+                Diem.DiemTBLan1 = Convert.ToDouble(DMDIEM.DTB1);
+                Diem.DiemTBLan2 = Convert.ToDouble(DMDIEM.DTB2);
+
+                try
+                {
+                    _QLSVData.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
     }
 }

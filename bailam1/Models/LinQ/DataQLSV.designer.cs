@@ -69,6 +69,9 @@ namespace bailam1.Models.LinQ
     partial void InsertDM_PHONGTHI(DM_PHONGTHI instance);
     partial void UpdateDM_PHONGTHI(DM_PHONGTHI instance);
     partial void DeleteDM_PHONGTHI(DM_PHONGTHI instance);
+    partial void InsertDM_HOCKY(DM_HOCKY instance);
+    partial void UpdateDM_HOCKY(DM_HOCKY instance);
+    partial void DeleteDM_HOCKY(DM_HOCKY instance);
     #endregion
 		
 		public DataQLSVDataContext() : 
@@ -202,6 +205,14 @@ namespace bailam1.Models.LinQ
 			get
 			{
 				return this.GetTable<DM_PHONGTHI>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DM_HOCKY> DM_HOCKies
+		{
+			get
+			{
+				return this.GetTable<DM_HOCKY>();
 			}
 		}
 	}
@@ -2291,6 +2302,8 @@ namespace bailam1.Models.LinQ
 		
 		private EntityRef<DM_MONHOC> _DM_MONHOC;
 		
+		private EntityRef<DM_HOCKY> _DM_HOCKY;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2315,6 +2328,7 @@ namespace bailam1.Models.LinQ
 		{
 			this._PHANPHONGTHIs = new EntitySet<PHANPHONGTHI>(new Action<PHANPHONGTHI>(this.attach_PHANPHONGTHIs), new Action<PHANPHONGTHI>(this.detach_PHANPHONGTHIs));
 			this._DM_MONHOC = default(EntityRef<DM_MONHOC>);
+			this._DM_HOCKY = default(EntityRef<DM_HOCKY>);
 			OnCreated();
 		}
 		
@@ -2413,6 +2427,10 @@ namespace bailam1.Models.LinQ
 			{
 				if ((this._MaHocKy != value))
 				{
+					if (this._DM_HOCKY.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaHocKyChanging(value);
 					this.SendPropertyChanging();
 					this._MaHocKy = value;
@@ -2505,6 +2523,40 @@ namespace bailam1.Models.LinQ
 						this._MaMonHoc = default(int);
 					}
 					this.SendPropertyChanged("DM_MONHOC");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH", Storage="_DM_HOCKY", ThisKey="MaHocKy", OtherKey="MaHK", IsForeignKey=true)]
+		public DM_HOCKY DM_HOCKY
+		{
+			get
+			{
+				return this._DM_HOCKY.Entity;
+			}
+			set
+			{
+				DM_HOCKY previousValue = this._DM_HOCKY.Entity;
+				if (((previousValue != value) 
+							|| (this._DM_HOCKY.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DM_HOCKY.Entity = null;
+						previousValue.PHANMON_THEO_CHUYENNGANHs.Remove(this);
+					}
+					this._DM_HOCKY.Entity = value;
+					if ((value != null))
+					{
+						value.PHANMON_THEO_CHUYENNGANHs.Add(this);
+						this._MaHocKy = value.MaHK;
+					}
+					else
+					{
+						this._MaHocKy = default(string);
+					}
+					this.SendPropertyChanged("DM_HOCKY");
 				}
 			}
 		}
@@ -3133,6 +3185,120 @@ namespace bailam1.Models.LinQ
 		{
 			this.SendPropertyChanging();
 			entity.DM_PHONGTHI = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DM_HOCKY")]
+	public partial class DM_HOCKY : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaHK;
+		
+		private string _TenHK;
+		
+		private EntitySet<PHANMON_THEO_CHUYENNGANH> _PHANMON_THEO_CHUYENNGANHs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaHKChanging(string value);
+    partial void OnMaHKChanged();
+    partial void OnTenHKChanging(string value);
+    partial void OnTenHKChanged();
+    #endregion
+		
+		public DM_HOCKY()
+		{
+			this._PHANMON_THEO_CHUYENNGANHs = new EntitySet<PHANMON_THEO_CHUYENNGANH>(new Action<PHANMON_THEO_CHUYENNGANH>(this.attach_PHANMON_THEO_CHUYENNGANHs), new Action<PHANMON_THEO_CHUYENNGANH>(this.detach_PHANMON_THEO_CHUYENNGANHs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHK", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaHK
+		{
+			get
+			{
+				return this._MaHK;
+			}
+			set
+			{
+				if ((this._MaHK != value))
+				{
+					this.OnMaHKChanging(value);
+					this.SendPropertyChanging();
+					this._MaHK = value;
+					this.SendPropertyChanged("MaHK");
+					this.OnMaHKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHK", DbType="NVarChar(50)")]
+		public string TenHK
+		{
+			get
+			{
+				return this._TenHK;
+			}
+			set
+			{
+				if ((this._TenHK != value))
+				{
+					this.OnTenHKChanging(value);
+					this.SendPropertyChanging();
+					this._TenHK = value;
+					this.SendPropertyChanged("TenHK");
+					this.OnTenHKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH", Storage="_PHANMON_THEO_CHUYENNGANHs", ThisKey="MaHK", OtherKey="MaHocKy")]
+		public EntitySet<PHANMON_THEO_CHUYENNGANH> PHANMON_THEO_CHUYENNGANHs
+		{
+			get
+			{
+				return this._PHANMON_THEO_CHUYENNGANHs;
+			}
+			set
+			{
+				this._PHANMON_THEO_CHUYENNGANHs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_PHANMON_THEO_CHUYENNGANHs(PHANMON_THEO_CHUYENNGANH entity)
+		{
+			this.SendPropertyChanging();
+			entity.DM_HOCKY = this;
+		}
+		
+		private void detach_PHANMON_THEO_CHUYENNGANHs(PHANMON_THEO_CHUYENNGANH entity)
+		{
+			this.SendPropertyChanging();
+			entity.DM_HOCKY = null;
 		}
 	}
 }

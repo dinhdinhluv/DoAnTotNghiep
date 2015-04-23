@@ -105,5 +105,31 @@ namespace bailam1.Function
             selectList.Add(new { Value = "False", Text = "Nữ" });
             return new SelectList(selectList, "Value", "Text", GioiTinh);
         }
+
+
+
+        public SelectList BuildMonHoc(int? selectedvalue)
+        {
+            IEnumerable<DM_MONHOC> lstMonHoc = _QLSVData.DM_MONHOCs.Where(a => a.TrangThai == Convert.ToBoolean("True"));
+            IList<object> selectList = new List<object> { new { Value = 0, Text = "-- Chọn Môn Học --" } };
+            foreach (var item in lstMonHoc)
+            {
+                selectList.Add(new { Value = item.MaMonHoc, Text = item.TenMonHoc });
+            }
+
+            return new SelectList(selectList, "Value", "Text", selectedvalue);
+        }
+
+        public SelectList BuildHocky(int? selectedvalue)
+        {
+            IEnumerable<DM_HOCKY> lstHocKy = _QLSVData.DM_HOCKies;
+            IList<object> selectList = new List<object> { new { Value = 0, Text = "-- Chọn Học Kỳ --" } };
+            foreach (var item in lstHocKy)
+            {
+                selectList.Add(new { Value = item.MaHK, Text = item.TenHK });
+            }
+
+            return new SelectList(selectList, "Value", "Text", selectedvalue);
+        }
     }
 }

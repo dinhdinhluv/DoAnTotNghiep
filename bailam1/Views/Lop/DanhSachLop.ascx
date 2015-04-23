@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.KHOA_DMKhoaForm>" %>
 <%@ Import Namespace="Webdiyer.WebControls.Mvc" %>
-<script>
+<script type="text/javascript">
     $('#myPager a').click(function () {
         if (this.href != "") {
             $.ajax({
