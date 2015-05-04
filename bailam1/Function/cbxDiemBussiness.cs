@@ -35,7 +35,7 @@ namespace bailam1.Function
 
             return new SelectList(selectList, "Value", "Text", selectedvalue);
         }
-
+       
         public SelectList BuildMonChuyenNganh(string MaKhoa)
         {
             IEnumerable<PHANMON_THEO_CHUYENNGANH> lstMonChuyenNganh = _QLSVData.PHANMON_THEO_CHUYENNGANHs.Where(a => a.MaKhoa == MaKhoa);
@@ -43,7 +43,7 @@ namespace bailam1.Function
             foreach (var item in lstMonChuyenNganh)
             {
                 var lst = _QLSVData.DM_MONHOCs.FirstOrDefault(a => a.MaMonHoc == item.MaMonHoc);
-                selectList.Add(new { Value = item.MaMonTheoChuyenNganh, Text = lst.TenMonHoc+"_"+"("+item.MaNienKhoa+")"});
+                selectList.Add(new { Value = item.MaMonTheoChuyenNganh, Text = lst.TenMonHoc+"_ ("+item.MaNienKhoa.Trim()+")"});
             }
 
             return new SelectList(selectList, "Value", "Text", "");

@@ -57,8 +57,8 @@ namespace bailam1.Function
                 MonChuyenNganh.MaMonHoc = Convert.ToInt32(MonHocTheoChuyenNganhForm.MonHoc);
                 MonChuyenNganh.MaKhoa = MonHocTheoChuyenNganhForm.Khoa;
                 MonChuyenNganh.MaChuyenNganh = MonHocTheoChuyenNganhForm.ChuyenNganh;
-                MonChuyenNganh.MaHocKy = MonHocTheoChuyenNganhForm.HocKy;
-                MonChuyenNganh.MaNienKhoa = MonHocTheoChuyenNganhForm.NienKhoa;
+                MonChuyenNganh.MaHocKy = MonHocTheoChuyenNganhForm.HocKy.Trim();
+                MonChuyenNganh.MaNienKhoa = MonHocTheoChuyenNganhForm.NienKhoa.Trim();
                 MonChuyenNganh.DVHT = Convert.ToInt32(MonHocTheoChuyenNganhForm.DVHT);
 
                 _QLSVData.PHANMON_THEO_CHUYENNGANHs.InsertOnSubmit(MonChuyenNganh);

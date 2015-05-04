@@ -22,20 +22,22 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <table style="width: 100%">
-        <tr>
-            <td id="ThemMonHoc">
-                <input id="Button1" type="button" value="Thêm Môn" onclick="ThemMonHoc()" />
-            </td>
-            <td align=right>
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                <strong>QUẢN LÝ MÔN HỌC</strong></h3>
+        </div>
+        <div class="panel-body">
                 Hiển Thị:&nbsp;&nbsp;
                 <select id="cbxTrangThai">
                     <option value="All"> Tất Cả </option>
                     <option value="True"> Bật </option>
                     <option value="False"> Tắt </option>
                 </select>
-            </td>
-        </tr>
-        </table>
+        </div>
     <div id="LoadDM_MonHoc"></div>
+        <div id="ThemMocHoc" class="text-center">
+            <input class="btn btn-primary" id="Button1" type="button" value="Thêm Môn" onclick="ThemMonHoc()" />
+        </div>
+    </div>
 </asp:Content>

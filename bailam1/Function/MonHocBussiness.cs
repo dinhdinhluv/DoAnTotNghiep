@@ -16,7 +16,7 @@ namespace bailam1.Function
 
         public List<DM_MonHocForm> lstDM_MonHoc_All()
         {
-            var DM_MonHoc = _QLSVData.DM_MONHOCs.ToList();
+            var DM_MonHoc = _QLSVData.DM_MONHOCs.ToList().OrderByDescending(a => a.MaMonHoc);
             var lst = new List<DM_MonHocForm>();
             foreach (var MonHoc in DM_MonHoc)
             {
@@ -34,7 +34,7 @@ namespace bailam1.Function
 
         public List<DM_MonHocForm> lstDM_MonHocTheoTrangThai(string TrangThai)
         {
-            var DM_MonHoc = _QLSVData.DM_MONHOCs.Where(a => a.TrangThai == Convert.ToBoolean(TrangThai)).ToList();
+            var DM_MonHoc = _QLSVData.DM_MONHOCs.Where(a => a.TrangThai == Convert.ToBoolean(TrangThai)).ToList().OrderByDescending(a=>a.MaMonHoc);
             var lst = new List<DM_MonHocForm>();
             foreach (var MonHoc in DM_MonHoc)
             {

@@ -38,16 +38,17 @@
     });
     };
 </script>
+<center>
 <form id="formsua" class="form-horizontal">
-<table width="100%" class="table table-hover">
+<table width="100%" class="table table-hover table-responsive giuadong">
         <tr>
-            <th>
+            <th class="giuadong">
                 Mã Môn Học
             </th>
-            <th>
+            <th class="giuadong">
                 Tên Môn Học
             </th>
-            <th>
+            <th class="giuadong">
                 Trạng Thái
             </th>
         </tr>
@@ -78,4 +79,4 @@
                     <%= Html.Pager(Model.Page_lstDM_MonHoc, pagerOptions)%></div>
                 <%= Html.Hidden("pageIndex", Model.PageNumber)%>
     </div>
-    </form>
+    </form></center>

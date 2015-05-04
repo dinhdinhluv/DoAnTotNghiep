@@ -14,16 +14,16 @@
             <label for="MaPhongThi" class="col-sm-2 control-label">
                 Phòng Thi</label>
             <div class="col-sm-10">
-                <%=Html.DropDownList("MaPhongThi", Model.listPhongThi)%>
+                <%=Html.DropDownList("MaPhongThi", Model.listPhongThi, new { style = "width:240px;", autocomplete="off" })%>
             </div>
-            <label for="MaKhoa" class="col-sm-2 control-label">
+            <label for="MaKhoa" class="col-sm-2 control-label" style="padding-top:10px;">
                 Khoa</label>
-            <div class="col-sm-10">
-                <%=Html.DropDownList("MaKhoa", Model.listKhoa)%>
+            <div class="col-sm-10" style="padding-top:5px;">
+                <%=Html.DropDownList("MaKhoa", Model.listKhoa, new { style = "width:240px;", autocomplete="off"  })%>
             </div>
-            <label for="MaMonHocChuyenNganh" class="col-sm-2 control-label">
+            <label for="MaMonHocChuyenNganh" class="col-sm-2 control-label" style="padding-top:15px;">
                 Môn thi</label>
-            <div class="col-sm-10" id="MaMonHocTheoKhoa">
+            <div class="col-sm-10" id="MaMonHocTheoKhoa" style="padding-top:5px;">
             </div>
             <div class="panel-body" id="LoadDiemTheoPhongMon"></div>
         </div>

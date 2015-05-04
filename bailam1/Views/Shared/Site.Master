@@ -53,7 +53,7 @@
                    <span class="nav-description">Quản lý tài khoản</span> 
                 </a>
                 <ul class="normal-dropdown normalAnimation">
-                    <li><a href="#">Danh mục tài khoản</a></li>
+                    <li><a href="/Admin/DanhSachAdmin">Danh mục tài khoản</a></li>
                     <li><a href="#">Cấp quyền tài khoản</a></li>
                 </ul>
             </li>

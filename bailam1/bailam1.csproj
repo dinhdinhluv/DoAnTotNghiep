@@ -78,6 +78,7 @@
     <Compile Include="Controllers\PhanPhongThiController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
     <Compile Include="Function\cbxDiemBussiness.cs" />
+    <Compile Include="Function\CheckLoginBussiness.cs" />
     <Compile Include="Function\DanhMucBussiness.cs" />
     <Compile Include="Function\DiemBussiness.cs" />
     <Compile Include="Function\KhoaBussiness.cs" />
@@ -91,6 +92,7 @@
     </Compile>
     <Compile Include="Models\FormModel\DiemForm.cs" />
     <Compile Include="Models\FormModel\KHOA_DMKhoaForm.cs" />
+    <Compile Include="Models\FormModel\LoginForm.cs" />
     <Compile Include="Models\FormModel\MonHocForm.cs" />
     <Compile Include="Models\FormModel\MonHocTheoChuyenNganhForm.cs" />
     <Compile Include="Models\FormModel\PhanPhongThiForm.cs" />
@@ -113,6 +115,7 @@
     <Content Include="Content\css\fontello.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\jquery\jquery-1.11.2.min.js" />
+    <Content Include="Content\js\bootstrap-filestyle.js" />
     <Content Include="Content\js\bootstrap.js" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\jquery-1.11.0.min.js" />
@@ -126,17 +129,26 @@
     <Content Include="HinhSV\CNTT\K8CNTT2\04.jpg" />
     <Content Include="HinhSV\QT\K8KT\1210090004.jpg" />
     <Content Include="img\cds.jpg" />
+    <Content Include="img\cds.png" />
     <Content Include="img\chosen-sprite.png" />
     <Content Include="img\dark-blue-sky.jpg" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\gridbg.png" />
     <Content Include="img\header.jpg" />
     <Content Include="img\login_bg.png" />
     <Content Include="img\photo.jpg" />
     <Content Include="img\Sasuke-s-Eternal-Mangekyou-Sharinga.jpg" />
     <Content Include="img\tong-cong-ty-sonadezi-1352889796.jpg" />
+    <Content Include="Scripts\JSAdmin_Login.js" />
     <Content Include="Scripts\JSdiem.js" />
     <Content Include="Scripts\JSQLSV.js" />
-    <Content Include="Views\Admin\ViewPage1.aspx" />
+    <Content Include="Views\Admin\DanhSachAdmin.ascx" />
+    <Content Include="Views\Admin\DanhSachAdmin.aspx" />
+    <Content Include="Views\Admin\Login.aspx" />
+    <Content Include="Views\Admin\SuaTaiKhoan.aspx" />
+    <Content Include="Views\Admin\SuaTaiKhoanUc.ascx" />
+    <Content Include="Views\Admin\ThemTaiKhoan.aspx" />
+    <Content Include="Views\Admin\ThemTaiKhoanUc.ascx" />
     <Content Include="Views\Diem\DiemTheoPhongThi.ascx" />
     <Content Include="Views\Diem\DiemTheoPhongThi.aspx" />
     <Content Include="Views\Diem\LoadMonThiTheoKhoa.ascx" />

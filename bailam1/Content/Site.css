@@ -1,12 +1,37 @@
-﻿.hinhnen
+﻿.giuadong
 {
-    background-image:url(../../img/dark-blue-sky.jpg);
+    text-align:center;
+}
+.width200px
+{
+    width:200px;
+}
+.padding-bottom
+{
+    padding-bottom:50px;
+}
+.canchinh
+{
+    margin:auto;
+    float:left;
+}
+.canchinh1
+{
+    margin:auto;
+    float:left;
+    padding-left:15px;
+}
+
+.hinhnen
+{
+    background-color:#00476D;
+    background-image:url(../../img/gridbg.png);
     background-repeat:no-repeat;
     font-size:x-small;
 }
 .d1
 {
-    height:128px;
+    height:200px;
     margin:auto;
 }
 .d2
@@ -17,6 +42,7 @@
 }
 .dangnhap
 {
+    background-image:url(../../img/login_bg.png);
     width:560px;
     height:250px;
     margin:auto;
@@ -420,4 +446,10 @@ dd a{
 ul{
 	list-style:none;
 	padding:5px 0px 0px 30px ;
+}
+.logosona
+{
+    background-repeat:no-repeat;
+    height:200px;
+    margin:auto;
 }

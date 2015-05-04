@@ -11,7 +11,8 @@
             <h3 class="panel-title text-center"><strong>DANH MỤC SINH VIÊN</strong></h3>
         </div>
         <div class="panel-body">
-            <select name='phanloai' id="cbxPhanLoaiSeach">
+            <div class="padding-bottom">
+            <select name='phanloai' id="cbxPhanLoaiSeach" class="canchinh">
                 <option value='0'>
                     Tìm theo mã sinh viên
                 </option>
@@ -19,7 +20,10 @@
                    Tìm theo mã lớp
                 </option>
             </select>
-            <input type="text" placeholder="--Tìm kiếm--" id="txtseach" class="form-control"onkeypress="javascript:if (event.keyCode==13) { ClickPhanLoaiSeach(); }"/>
+            <div class="canchinh1">
+            <input type="text" placeholder="--Tìm kiếm--" id="txtseach" class="form-control" onkeypress="javascript:if (event.keyCode==13) { ClickPhanLoaiSeach(); }"/>
+            </div>
+            </div>
             <%--<input id="btseach" type="button" value="Tìm" onclick="ClickPhanLoaiSeach();" />--%>
             <div id="LoadlstSinhVien"></div>
             

@@ -126,17 +126,6 @@
       <Association Name="DM_PHONGTHI_PHANPHONGTHI" Member="DM_PHONGTHI" ThisKey="MaPhongThi" OtherKey="MaPhongThi" Type="DM_PHONGTHI" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DIEM_TBMON" Member="DIEM_TBMONs">
-    <Type Name="DIEM_TBMON">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaMonHocTheoChuyenNganh" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaSinhVien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="DiemTBLan1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DiemTBLan2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="SINHVIEN_DIEM_TBMON" Member="SINHVIEN" ThisKey="MaSinhVien" OtherKey="MaSinhVien" Type="SINHVIEN" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DM_PHONGTHI" Member="DM_PHONGTHIs">
     <Type Name="DM_PHONGTHI">
       <Column Name="MaPhongThi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -149,6 +138,33 @@
       <Column Name="MaHK" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenHK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH" Member="PHANMON_THEO_CHUYENNGANHs" ThisKey="MaHK" OtherKey="MaHocKy" Type="PHANMON_THEO_CHUYENNGANH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIEM_TBMON" Member="DIEM_TBMONs">
+    <Type Name="DIEM_TBMON">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaMonHocTheoChuyenNganh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaSinhVien" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DiemTBLan1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemTBLan2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="SINHVIEN_DIEM_TBMON" Member="SINHVIEN" ThisKey="MaSinhVien" OtherKey="MaSinhVien" Type="SINHVIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAIKHOAN" Member="TAIKHOANs">
+    <Type Name="TAIKHOAN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaiKhoan" Member="TaiKhoan1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLoaiTK" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="DM_LOAITAIKHOAN_TAIKHOAN" Member="DM_LOAITAIKHOAN" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="DM_LOAITAIKHOAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DM_LOAITAIKHOAN" Member="DM_LOAITAIKHOANs">
+    <Type Name="DM_LOAITAIKHOAN">
+      <Column Name="MaLoaiTK" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenLoaiTK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="DM_LOAITAIKHOAN_TAIKHOAN" Member="TAIKHOANs" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="TAIKHOAN" />
     </Type>
   </Table>
 </Database>

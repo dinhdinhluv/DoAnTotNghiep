@@ -11,7 +11,7 @@ using Webdiyer.WebControls.Mvc;
 namespace bailam1.Controllers
 {
     public class DiemController : Controller
-    {
+    {   
         //
         // GET: /Diem/
         DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
@@ -42,6 +42,12 @@ namespace bailam1.Controllers
             DiemForm frmDiem = new DiemForm();
             frmDiem.listMonChuyenNganh = _cbxDiem.BuildMonChuyenNganh(makhoa);
             return PartialView("~/Views/Diem/LoadMonThiTheoKhoa.ascx", frmDiem);
+        }
+
+        public JsonResult SuaDiem(int ID, string DTB1, string DTB2)
+        {
+            var danhsachDiem = _DIEM.SuaDiem(ID,DTB1,DTB2);
+            return Json(danhsachDiem, JsonRequestBehavior.AllowGet);
         }
 
     }

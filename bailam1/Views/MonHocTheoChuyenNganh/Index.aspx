@@ -23,6 +23,17 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <%=Html.DropDownList("cbxKhoa", Model.listKhoa)%><input id="Button1" type="button" value="Phân Môn Chuyên Ngành Mới" onclick="LoadThemMonChuyenNganh()" />
-    <div id="lstPhanMon"></div>
+     <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                <strong>PHÂN MÔN THEO CHUYÊN NGÀNH</strong></h3>
+        </div>
+        <div class="panel-body">
+            <%=Html.DropDownList("cbxKhoa", Model.listKhoa, new { style = "width:200px;" })%> <input class="btn btn-primary" id="Button1" type="button" value="Phân Môn Chuyên Ngành Mới" onclick="LoadThemMonChuyenNganh()" />
+        </div>
+        <div id="lstPhanMon"></div>
+        <input id="vothemlop" type="button" class="btn btn-primary center-block" value="Thêm mới" onclick="ThemTrenModal()" />
+    </div>
+    
+    
 </asp:Content>

@@ -17,24 +17,24 @@
         return false;
     });
 </script>
-<table width="100%" class="table table-hover" >
+<table width="100%" class="table table-hover text-center" >
         <tr>
-            <th>
+            <th class="giuadong">
                 Mã Môn Chuyên Ngành
             </th>
-            <th>
+            <th class="giuadong">
                 Tên Môn Chuyên Ngành
             </th>
-            <th>
+            <th class="giuadong">
                 Chuyên Ngành
             </th>
-            <th>
+            <th class="giuadong">
                 Học Kỳ
             </th>
-            <th>
+            <th class="giuadong">
                 Niên Khóa
             </th>
-            <th>
+            <th class="giuadong">
                 DVHT
             </th>
         </tr>

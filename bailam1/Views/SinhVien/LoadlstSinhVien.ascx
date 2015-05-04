@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.DanhSachSinhVien>" %>
 <%@ Import Namespace="Webdiyer.WebControls.Mvc" %>
 
-<script>
+<script type="text/javascript">
     $('#Pager a').click(function () {
         if (this.href != "") {
             $.ajax({
@@ -41,37 +41,38 @@
         });
     });
 </script>
-<table width="100%">
+<center>
+<table width="100%" id="hienthisinhvien" class="giuadong">
         <tr>
-            <th>
+            <th class="giuadong">
                 STT
             </th>
-            <th>
+            <th class="giuadong">
                 Mã Sinh Viên
             </th>
-            <th>
+            <th class="giuadong">
                 Tên Sinh Viên
             </th>
-            <th>
+            <th class="giuadong">
                 Giới Tính
             </th>
-            <th>
+            <th class="giuadong">
                 Ngày Sinh
             </th>
-            <th>
+            <th class="giuadong">
                 Nơi Sinh
             </th>
-            <th>
+            <th class="giuadong">
                 Lớp
             </th>
-            <th>
+            <th class="giuadong">
             </th>
 
         </tr>
         <% int stt = 1; %>
     <% foreach (var item in Model.Page_lstSV) { %>
     
-        <tr>
+        <tr align="left">
             <td>
                 
                 <%: stt %>
@@ -96,13 +97,14 @@
                 <%: item.Lop %>
             </td>
             <td>
-                <input type="button" class="btn btn-primary" value="Sửa thông tin" onclick="SuaModal('<%= item.MaSinhVien %>')" />
+                <input type="button" class="btn btn-primary" id="suathongtinsinhvien" value="Sửa thông tin" onclick="SuaModal('<%= item.MaSinhVien %>')" />
             </td>
         </tr>  
     
     <% } %>
 
     </table>
+    </center>
     <div style="text-align:center">
         <%
                     var pagerOptions = new PagerOptions();

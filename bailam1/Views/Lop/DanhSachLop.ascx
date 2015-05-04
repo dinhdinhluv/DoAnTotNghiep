@@ -42,32 +42,33 @@
     });
 
 </script>
-<table class="table table-hover table-responsive">
-    <thead>
+<center>
+<table class="table table-hover table-responsive giuadong" id="tbhienthilop">
+   
         <tr>
-            <th>
+            <th class="giuadong">
                 Mã Lớp
             </th>
-            <th>
+            <th class="giuadong">
                 Tên lớp
             </th>
-            <th>
+            <th class="giuadong">
                 Khoa
             </th>
-            <th>
+            <th class="giuadong">
                 Chuyên ngành
             </th>
-            <th>
+            <th class="giuadong">
                 Niên khóa
             </th>
-            <th>
+            <th class="giuadong">
             </th>
-            <th>
+            <th class="giuadong">
             </th>
         </tr>
         <% foreach (var item in Model.PageListDanhSachLop)
            { %>
-        <tr>
+        <tr align="left">
             <td>
                 <%: item.MaLop %>
             </td>
@@ -84,10 +85,10 @@
                 <%: item.ThoiGianNienKhoa %>
             </td>
             <td>
-                <input type="button" class="btn btn-primary" value="Sửa" onclick="SuaTrenModal(<%= item.ID %>)" />
+                <input id="vosualop" type="button" class="btn btn-primary" value="Sửa" onclick="SuaTrenModal(<%= item.ID %>)" />
             </td>
             <td>
-                <input type="button" class="btn btn-primary" value="Xóa" onclick="XoaLop(<%= item.ID %>)" />
+                <input id="xoalop" type="button" class="btn btn-primary" value="Xóa" onclick="XoaLop(<%= item.ID %>)" />
             </td>
         </tr>
         <% } %>
@@ -103,7 +104,7 @@
                 <%= Html.Hidden("pageIndex", Model.PageNumber)%>
             </td>
         </tr>
-    </thead>
-    <tbody>
-    </tbody>
+   
+
 </table>
+</center>

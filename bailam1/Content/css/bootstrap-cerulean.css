@@ -106,15 +106,13 @@ textarea {
   vertical-align: top;
 }
 .clearfix {
-  *zoom: 1;
 }
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
 }
-.clearfix:after {
-  clear: both;
+.clearfix::after {
+    clear: both;
 }
 .hide-text {
   font: 0/0 a;
@@ -306,8 +304,7 @@ a:hover {
   *width: 48.88297871863829%;
 }
 .row-fluid .span5 {
-  width: 40.425531911%;
-  *width: 40.3723404216383%;
+  width: 40.4255%;
 }
 .row-fluid .span4 {
   width: 31.914893614%;
@@ -2123,10 +2120,29 @@ button.close {
   -webkit-appearance: none;
 }
 .btn {
-  display: inline-block;
-  *border-bottom: 0 none #b3b3b3;
-    display: inline;
-  /* IE7 inline-block hack */
+  -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(center top , #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border-color: #cccccc #cccccc #b3b3b3;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 3px;
+    padding: 4px 10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
 
   *zoom: 1;
     padding: 4px 10px 4px;
@@ -2270,13 +2286,9 @@ button.close {
 }
 .btn-primary {
   background-color: #368bd7;
+  background-image: -moz-linear-gradient(center top , #369bd7, #3673d7);
   background-repeat: repeat-x;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-image: linear-gradient(top, #369bd7, #3673d7);
-    border-left-color: #3673d7;
-    border-right-color: #3673d7;
-    border-top-color: #3673d7;
-    border-bottom-color: #2050a1;
 }
 .btn-primary:hover,
 .btn-primary:active,
@@ -4199,7 +4211,7 @@ div.subnav {
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #2480b6 \9;
+  background-color: #2480b6;
 }
 .btn-info {
   background-color: #9e6ab8;

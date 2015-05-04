@@ -13,7 +13,7 @@
     });
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
-    <div class="modal-dialog" id="suasinhvien">
+    <div class="modal-dialog" id="suasinhvien" style="width:1024px;">
     </div>
 </asp:Content>
 

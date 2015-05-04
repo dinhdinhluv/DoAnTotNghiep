@@ -25,49 +25,50 @@
                     <label for="MaSinhVien" class="col-sm-5 control-label">
                         Môn Học :</label>
                     <div class="col-sm-1">
-                        <%=Html.DropDownList("MonHoc", Model.listMonHoc)%>
+                        <%=Html.DropDownList("MonHoc", Model.listMonHoc, new { style = "width:200px;" })%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="MaLop" class="col-sm-5 control-label">
                         Khoa :</label>
                     <div class="col-sm-1">
-                        <%=Html.DropDownList("Khoa", Model.listKhoa)%>
+                        <%=Html.DropDownList("Khoa", Model.listKhoa, new { style = "width:200px;" })%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="MaLop" class="col-sm-5 control-label">
                         Chuyên Ngành :</label>
                     <div class="col-sm-1" id="cbxChuyenNganh">
-                        <%=Html.DropDownList("ChuyenNganh", Model.listChuyenNganh)%>
+                        <%=Html.DropDownList("ChuyenNganh", Model.listChuyenNganh, new { style = "width:200px;" })%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="MaLop" class="col-sm-5 control-label">
                         Học Kỳ :</label>
                     <div class="col-sm-1">
-                        <%=Html.DropDownList("HocKy", Model.listHocKy)%>
+                        <%=Html.DropDownList("HocKy", Model.listHocKy, new { style = "width:200px;" })%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="MaLop" class="col-sm-5 control-label">
                         Niên Khóa :</label>
                     <div class="col-sm-1">
-                        <%=Html.DropDownList("NienKhoa", Model.listNienKhoa)%>
+                        <%=Html.DropDownList("NienKhoa", Model.listNienKhoa, new { style = "width:200px;" })%>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="MaLop" class="col-sm-5 control-label">
                         DVHT :</label>
-                    <div class="col-sm-1">
-                        <input type="text" id="txtDVHT" name="DVHT" />
+                    <div class="col-sm-1" >
+                        <input type="text" style="width:200px;" id="txtDVHT" name="DVHT" />
                     </div>
                 </div>
             </div>
         </div>
-     <div style="text-align:center">
+        <center>
+     <div style="text-align:center;">
         <input class="btn btn-primary" onclick="ThemMonChuyenNganh()" id="btThem" type="button" value="Thêm" />
         <input class="btn btn-primary" id="btTroVe" type="button" value="Trở Về" onclick="loadTroVe();" />
-    </div>
+    </div></center>
     </form>
 

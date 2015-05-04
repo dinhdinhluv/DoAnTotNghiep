@@ -45,17 +45,33 @@ namespace bailam1.Function
             t.DSDIEM = df;
             return t;
         }
+       
 
-
-
-
-        public bool SuaDiem(DiemForm DMDIEM)
+        public bool SuaDiem(int ID, string DTB1,string DTB2)
         {
-            var Diem = _QLSVData.DIEM_TBMONs.FirstOrDefault(t => t.ID == DMDIEM.ID);
+            var Diem = _QLSVData.DIEM_TBMONs.FirstOrDefault(t => t.ID == ID);
             if (Diem != null)
             {
-                Diem.DiemTBLan1 = Convert.ToDouble(DMDIEM.DTB1);
-                Diem.DiemTBLan2 = Convert.ToDouble(DMDIEM.DTB2);
+                if (DTB1 == "" && DTB2 == "")
+                {
+                    Diem.DiemTBLan1 = 0;
+                    Diem.DiemTBLan2 = 0;
+                }
+                else if (DTB1 == "")
+                {
+                    Diem.DiemTBLan1 = 0;
+                    Diem.DiemTBLan2 = Convert.ToDouble(DTB2);
+                }
+                else if (DTB2 == "")
+                {
+                    Diem.DiemTBLan2 = 0;
+                    Diem.DiemTBLan1 = Convert.ToDouble(DTB1);
+                }
+                else
+                {
+                    Diem.DiemTBLan1 = Convert.ToDouble(DTB1);
+                    Diem.DiemTBLan2 = Convert.ToDouble(DTB2);
+                }
 
                 try
                 {
