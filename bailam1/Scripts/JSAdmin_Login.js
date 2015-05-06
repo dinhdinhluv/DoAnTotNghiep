@@ -15,7 +15,22 @@
     });
 }
 
+function PhanTrangQuyenAdmin() {
+    $.ajax({
+        url: '/Admin/CapQuyenTaiKhoanAjax', // Controller/Action
+        async: false, // chạy bất đồng bộ 2 ajax 
+        data: { TuKhoa: $("#txtTimKiemTK").val().trim() },
+        success: function (data) { // data đối tượng trả về cuả hàm ajax
+            $("#divPhanTrangQH").html(data); // div nhận dữ liệu html 
+            return;
 
+        },
+        error: function () {
+            alert("Không có dữ liệu!");
+            return;
+        }
+    });
+}
 
 function ThemTaiKhoan() {
     if ($('#MatKhau').val() == $('#reMatKhau').val()) {
@@ -88,3 +103,20 @@ function SuaTaiKhoan() {
 }
 
 /**********************************/
+function SuaQuyenHanTaiKhoan() {
+    $.ajax({
+        url: "/Admin/SuaQuyenTaiKhoan",
+        type: "post",
+        data: $('#formsuaquyentk').serialize(),
+        success: function (data) {
+            if (data == true) {
+                alert("Phân quyền thành công..!");
+                PhanTrangQuyenAdmin();
+                $('#suatk').modal('hide');
+            }
+            else {
+                alert("Sửa thành công..!");
+            }
+        }
+    });
+}

@@ -132,9 +132,9 @@
                 </div>
             </div>
         </div>
-    <div style="text-align:center">
+    <%--<div style="text-align:center">
         <input class="btn btn-primary" id="btSua" onclick="ThucHienSuaSV();" type="button" value="Sửa" />
         <input class="btn btn-primary" id="btTroVe" type="button" value="Trở Về" onclick="loadTroVe();" />
-    </div>
+    </div>--%>
     </form>
 

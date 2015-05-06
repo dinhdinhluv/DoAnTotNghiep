@@ -18,9 +18,10 @@ namespace bailam1.Controllers
         DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
         KhoaBussiness _KHOA = new KhoaBussiness();
         LopBussiness _LOP = new LopBussiness();
+        
         public ActionResult DanhSachLop(int? pageIndex)
         {
-            return View("~/Views/Lop/DanhSachLop.aspx");
+                return View("~/Views/Lop/DanhSachLop.aspx");
         }
         public ActionResult DanhSachLopAjax(int? pageIndex, string TuKhoa)
         {

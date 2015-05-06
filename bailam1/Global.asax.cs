@@ -30,13 +30,7 @@ namespace bailam1
                 new { controller = "Diem", action = "DiemTheoPhongThi", id = UrlParameter.Optional } // Parameter defaults
             );
 
-            /// http://sever/Login
-            routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
-
+      
             ///http://sever/Lop
             routes.MapRoute(
                 "Lop Route", // Route name
@@ -49,6 +43,20 @@ namespace bailam1
                 "Admin Route", // Route name
                 "Account/{action}/{id}", // URL with parameters
                 new { controller = "Admin", action = "DanhSachAdmin", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            //http://sever/Level
+            routes.MapRoute(
+                "Level Route", // Route name
+                "Level/{action}/{id}", // URL with parameters
+                new { controller = "Admin", action = "CapQuyenTaiKhoan", id = UrlParameter.Optional } // Parameter defaults
+            );
+
+            /// http://sever/Login
+            routes.MapRoute(
+                "Default", // Route name
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }

@@ -9,10 +9,8 @@
     <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/chosen.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/css/fontello.css" rel="stylesheet" type="text/css" />
-    
     <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
-
     <script src="../../Scripts/jquery-1.4.1.js" type="text/javascript"></script>
     <script src="../../Content/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>
     <script src="../../Content/js/bootstrap.min.js" type="text/javascript"></script>
@@ -23,14 +21,10 @@
     </div>
     <div class="body">
         <div class="menu">
-            <nav id="main-navigation" class="style1">
+            <nav id="main-navigation">
         <ul>
             <li class="blue">
-                <a href="#"><span class="nav-description">Quản lý sinh viên</span></a>
-                <ul class="normal-dropdown normalAnimation">
-                    <li><a href="#">Chuyển lớp</a></li>
-                    <li><a href="/SinhVien/Index">Danh mục sinh viên</a></li>
-                </ul>
+                <a href="/SinhVien/Index"><span class="nav-description">Quản lý sinh viên</span></a>
             </li>
             <li class="blue">
                 <a href="/Lop/DanhSachLop"><span class="nav-description">Quản lý lớp</span></a>
@@ -43,7 +37,7 @@
                 </ul>
             </li>
             <li class="blue">
-                <a href="#"><span class="nav-description">Phân phòng thi</span></a>
+                <a href="/PhanPhongThi/PhanPhongThi"><span class="nav-description">Phân phòng thi</span></a>
             </li>
             <li class="blue">
                 <a href="/Diem/DiemTheoPhongThi"><span class="nav-description">Quản lý điểm</span></a>
@@ -54,11 +48,16 @@
                 </a>
                 <ul class="normal-dropdown normalAnimation">
                     <li><a href="/Admin/DanhSachAdmin">Danh mục tài khoản</a></li>
-                    <li><a href="#">Cấp quyền tài khoản</a></li>
+                    <li><a href="/Admin/CapQuyenTaiKhoan">Cấp quyền tài khoản</a></li> 
                 </ul>
             </li>
-            <li class="nav-search">
-                <i class="icons icon-search-1"></i>
+            <li class="blue">
+                <a href="#">
+                   <span>Hi: <%: Session["Username"]%></span> 
+                </a>
+                <ul class="normal-dropdown normalAnimation">
+                    <li><a href="/Admin/DangXuat">Đăng Xuất</a></li>
+                </ul>
             </li>			
 	    </ul>
         </nav>

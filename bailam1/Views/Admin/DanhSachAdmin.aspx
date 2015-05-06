@@ -52,7 +52,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center" id="ModalTitle">
-                        Sửa thông tin lớp</h4>
+                        Đổi mật khẩu</h4>
                 </div>
                 <div class="modal-body">
                 </div>

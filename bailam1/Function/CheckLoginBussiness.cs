@@ -13,7 +13,7 @@ namespace bailam1.Function
     public class CheckLoginBussiness
     {
         readonly DataQLSVDataContext _QLSVData = new DataQLSVDataContext();
-        
+
         public LoginForm getAllTK()
         {
             var tk = new LoginForm();
@@ -49,7 +49,7 @@ namespace bailam1.Function
                 {
                     lstTK.TaiKhoan1 = DMTK.TaiKhoan;
                     lstTK.MatKhau = DMTK.MatKhau;
-                    
+
 
                     _QLSVData.TAIKHOANs.InsertOnSubmit(lstTK);
                     _QLSVData.SubmitChanges();
@@ -70,8 +70,27 @@ namespace bailam1.Function
             {
                 Tk.TaiKhoan1 = DMTK.TaiKhoan;
                 Tk.MatKhau = DMTK.MatKhauMoi;
-                
 
+
+                try
+                {
+                    _QLSVData.SubmitChanges();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
+
+        public bool SuaQuyenTK(LoginForm DMTK)
+        {
+            var qhTk = _QLSVData.TAIKHOANs.FirstOrDefault(t => t.ID == DMTK.ID);
+            if (qhTk != null)
+            {
+                qhTk.MaLoaiTK = DMTK.MaLoaiTaiKhoan;
                 try
                 {
                     _QLSVData.SubmitChanges();
@@ -115,8 +134,8 @@ namespace bailam1.Function
                 f.ID = tk.ID;
                 f.TaiKhoan = tk.TaiKhoan1;
                 f.MatKhau = tk.MatKhau;
-                f.MaLoaiTaiKhoan = tk.MaLoaiTK ;
-                var e = _QLSVData.DM_LOAITAIKHOANs.FirstOrDefault(n=>n.MaLoaiTK==tk.MaLoaiTK);
+                f.MaLoaiTaiKhoan = tk.MaLoaiTK;
+                var e = _QLSVData.DM_LOAITAIKHOANs.FirstOrDefault(n => n.MaLoaiTK == tk.MaLoaiTK);
                 if (e != null)
                 {
                     f.TenLoaiTaiKhoan = e.TenLoaiTK;
@@ -128,28 +147,32 @@ namespace bailam1.Function
 
         public bool CheckLogin(string Username, string Password)
         {
-            var lstTK = _QLSVData.TAIKHOANs.ToList();
-            if (Username != null && Password != null)
-            {
-                foreach (var i in lstTK)
-                {
-                    if (i.TaiKhoan1.Trim() == Username.Trim() && i.MatKhau.Trim() == Password.Trim())
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            else if (Username == null || Password == null)
-            {
+            var lstTK = _QLSVData.TAIKHOANs.FirstOrDefault(i => i.TaiKhoan1.Trim() == Username.Trim() && i.MatKhau.Trim() == Password.Trim());
+            if (Username == null || Password == null)
                 return false;
+            if (lstTK != null)
+            {
+                return true;
             }
+
             else
+            {
                 return false;
-            return false;
+            }
         }
+
+
+        public SelectList BuildQuyenHanTaiKhoan(string selectedvalue)
+        {
+            IEnumerable<DM_LOAITAIKHOAN> lstLoaiTK = _QLSVData.DM_LOAITAIKHOANs;
+            IList<object> selectList = new List<object> { new { Value = "", Text = "-- Chọn Quyền Hạn --" } };
+            foreach (var item in lstLoaiTK)
+            {
+                selectList.Add(new { Value = item.MaLoaiTK, Text = item.TenLoaiTK });
+            }
+
+            return new SelectList(selectList, "Value", "Text", selectedvalue);
+        }
+
     }
 }

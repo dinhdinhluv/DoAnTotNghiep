@@ -28,6 +28,7 @@ namespace bailam1.Controllers
         {
             var danhsachAdmin = new LoginForm();
             var lstTK = _CHECK.getAllTK();
+            danhsachAdmin.listQuyenHan = _CHECK.BuildQuyenHanTaiKhoan(danhsachAdmin.MaLoaiTaiKhoan);
             danhsachAdmin.PageNumber = pageIndex ?? 1;
             if (string.IsNullOrEmpty(TuKhoa))
             {
@@ -69,6 +70,7 @@ namespace bailam1.Controllers
         public ActionResult SuaTaiKhoanAjax(int id)
         {
             var res = _CHECK.GetTaiKhoanTheoID(id);
+
             return View("~/Views/Admin/SuaTaiKhoanUc.ascx", res);
         }
 
@@ -87,12 +89,65 @@ namespace bailam1.Controllers
             return Json(XoaTK, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult DangXuat()
+        {
+            Session.Clear();
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public JsonResult Login(string Username, string Password)
         {
             var chkLogin = _CHECK.CheckLogin(Username, Password);
+            if(chkLogin == true)
+                Session["Username"] = Username;
             return Json(chkLogin, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+        public ActionResult CapQuyenTaiKhoan()
+        {
+            return View("~/Views/Admin/CapQuyenTaiKhoan.aspx");
+        }
+
+        public ActionResult CapQuyenTaiKhoanAjax(int? pageIndex, string TuKhoa)
+        {
+            var danhsachAdmin = new LoginForm();
+            danhsachAdmin.listQuyenHan = _CHECK.BuildQuyenHanTaiKhoan(danhsachAdmin.MaLoaiTaiKhoan);
+            var lstTK = _CHECK.getAllTK();
+            danhsachAdmin.PageNumber = pageIndex ?? 1;
+            if (string.IsNullOrEmpty(TuKhoa))
+            {
+                danhsachAdmin.PageListDanhSachAdmin = new PagedList<LoginForm>(lstTK.DSTK, danhsachAdmin.PageNumber, 10);
+            }
+            else
+            {
+                lstTK.DSTK = lstTK.DSTK.Where(p => p.TaiKhoan.Trim().ToLower().Contains(TuKhoa.ToLower())).ToList();
+                danhsachAdmin.PageListDanhSachAdmin = new PagedList<LoginForm>(lstTK.DSTK, danhsachAdmin.PageNumber, 10);
+            }
+            return View("~/Views/Admin/CapQuyenTaiKhoan.ascx", danhsachAdmin);
+        }
+
+        /*--------------------SỬA QUYỀN TÀI KHOẢN------------------*/
+        public ActionResult SuaQuyenTaiKhoan(int id)
+        {
+            return View("~/Views/Admin/SuaQuyenTaiKhoan.aspx");
+        }
+
+        public ActionResult SuaQuyenTaiKhoanAjax(int id)
+        {
+            var res = _CHECK.GetTaiKhoanTheoID(id);
+            res.listQuyenHan = _CHECK.BuildQuyenHanTaiKhoan("");
+            return View("~/Views/Admin/SuaQuyenTaiKhoanUc.ascx", res);
+        }
+
+        [HttpPost]
+        public JsonResult SuaQuyenTaiKhoan(int id, LoginForm tk)
+        {
+            var SuaQHTK = _CHECK.SuaQuyenTK(tk);
+            return Json(SuaQHTK, JsonRequestBehavior.AllowGet);
         }
     }
 }

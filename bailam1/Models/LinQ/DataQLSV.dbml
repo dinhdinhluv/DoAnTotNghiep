@@ -75,8 +75,8 @@
       <Column Name="NgayTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NgaySua" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Isdelete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="SINHVIEN_PHANPHONGTHI" Member="PHANPHONGTHIs" ThisKey="MaSinhVien" OtherKey="MaSV" Type="PHANPHONGTHI" />
       <Association Name="SINHVIEN_DIEM_TBMON" Member="DIEM_TBMONs" ThisKey="MaSinhVien" OtherKey="MaSinhVien" Type="DIEM_TBMON" />
+      <Association Name="SINHVIEN_PHANPHONGTHI" Member="PHANPHONGTHIs" ThisKey="MaSinhVien" OtherKey="MaSV" Type="PHANPHONGTHI" />
       <Association Name="DM_DANTOC_SINHVIEN" Member="DM_DANTOC" ThisKey="MaDanToc" OtherKey="MaDanToc" Type="DM_DANTOC" IsForeignKey="true" />
       <Association Name="DM_NIENKHOA_SINHVIEN" Member="DM_NIENKHOA" ThisKey="MaNienKhoa" OtherKey="MaNienKhoa" Type="DM_NIENKHOA" IsForeignKey="true" />
       <Association Name="DM_QUEQUAN_SINHVIEN" Member="DM_QUEQUAN" ThisKey="MaQueQuan" OtherKey="MaQueQuan" Type="DM_QUEQUAN" IsForeignKey="true" />
@@ -113,17 +113,6 @@
       <Association Name="PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" Member="PHANPHONGTHIs" ThisKey="MaMonTheoChuyenNganh" OtherKey="MaMonHocTheoChuyenNganh" Type="PHANPHONGTHI" />
       <Association Name="DM_MONHOC_PHANMON_THEO_CHUYENNGANH" Member="DM_MONHOC" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="DM_MONHOC" IsForeignKey="true" />
       <Association Name="DM_HOCKY_PHANMON_THEO_CHUYENNGANH" Member="DM_HOCKY" ThisKey="MaHocKy" OtherKey="MaHK" Type="DM_HOCKY" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PHANPHONGTHI" Member="PHANPHONGTHIs">
-    <Type Name="PHANPHONGTHI">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaSV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="MaPhongThi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaMonHocTheoChuyenNganh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" Member="PHANMON_THEO_CHUYENNGANH" ThisKey="MaMonHocTheoChuyenNganh" OtherKey="MaMonTheoChuyenNganh" Type="PHANMON_THEO_CHUYENNGANH" IsForeignKey="true" />
-      <Association Name="SINHVIEN_PHANPHONGTHI" Member="SINHVIEN" ThisKey="MaSV" OtherKey="MaSinhVien" Type="SINHVIEN" IsForeignKey="true" />
-      <Association Name="DM_PHONGTHI_PHANPHONGTHI" Member="DM_PHONGTHI" ThisKey="MaPhongThi" OtherKey="MaPhongThi" Type="DM_PHONGTHI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DM_PHONGTHI" Member="DM_PHONGTHIs">
@@ -165,6 +154,18 @@
       <Column Name="MaLoaiTK" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLoaiTK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="DM_LOAITAIKHOAN_TAIKHOAN" Member="TAIKHOANs" ThisKey="MaLoaiTK" OtherKey="MaLoaiTK" Type="TAIKHOAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHANPHONGTHI" Member="PHANPHONGTHIs">
+    <Type Name="PHANPHONGTHI">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MaPhongThi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaMonHocTheoChuyenNganh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NgayThi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DM_PHONGTHI_PHANPHONGTHI" Member="DM_PHONGTHI" ThisKey="MaPhongThi" OtherKey="MaPhongThi" Type="DM_PHONGTHI" IsForeignKey="true" />
+      <Association Name="PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" Member="PHANMON_THEO_CHUYENNGANH" ThisKey="MaMonHocTheoChuyenNganh" OtherKey="MaMonTheoChuyenNganh" Type="PHANMON_THEO_CHUYENNGANH" IsForeignKey="true" />
+      <Association Name="SINHVIEN_PHANPHONGTHI" Member="SINHVIEN" ThisKey="MaSV" OtherKey="MaSinhVien" Type="SINHVIEN" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

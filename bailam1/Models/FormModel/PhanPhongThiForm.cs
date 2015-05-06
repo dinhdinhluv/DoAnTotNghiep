@@ -9,18 +9,15 @@ namespace bailam1.Models.FormModel
 {
     public class PhanPhongThiForm
     {
-        public string MaMonTheoChuyenNganh { get; set; }
-        public string MonHoc { get; set; }
-        public string Khoa { get; set; }
-        public string ChuyenNganh { get; set; }
-        public string HocKy { get; set; }
-        public string NienKhoa { get; set; }
-        public string DVHT { get; set; }
-        public SelectList listMonHoc { get; set; }
+        public string ID { get; set; }
+        public string MaSV { get; set; }
+        public string PhongThi { get; set; }
+        public string MonChuyenNganh { get; set; }
+        public string NgayThi { get; set; }
+        public SelectList listPhongThi { get; set; }
         public SelectList listKhoa { get; set; }
-        public SelectList listChuyenNganh { get; set; }
-        public SelectList listHocKy { get; set; }
-        public SelectList listNienKhoa { get; set; }
+        public SelectList listMonChuyenNganh { get; set; }
+        public SelectList listNgayThi { get; set; }
     }
 
     public class DanhSachPhanPhongThi

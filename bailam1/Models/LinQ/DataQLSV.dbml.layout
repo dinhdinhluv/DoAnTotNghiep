@@ -83,7 +83,7 @@
         <classShapeMoniker Id="6d79d51f-f378-4ddb-b755-0cf1a4d13b43" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.125 : 3.1); (5 : 3.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.125 : 3.1); (4.47916666666667 : 3.1 : JumpStart); (4.64583333333333 : 3.1 : JumpEnd); (5 : 3.1)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataQLSVDataContext/DM_TONGIAO/DM_TONGIAO_SINHVIEN" />
       <nodes>
         <classShapeMoniker Id="436609af-4cf2-469b-ab27-ad6eca3eeec8" />
@@ -118,46 +118,19 @@
         <classShapeMoniker Id="901b47c1-70d7-4b61-b1ab-406f678d9ed8" />
       </nodes>
     </associationConnector>
-    <classShape Id="ba0dc754-38ca-468e-9568-cc43c7cc80b2" absoluteBounds="1, 5.875, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DataQLSVDataContext/PHANPHONGTHI" />
-      <nestedChildShapes>
-        <elementListCompartment Id="df6244f0-2037-47f4-9094-d7b20e964e61" absoluteBounds="1.0150000000000006, 6.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.875 : 8.375); (2.875 : 7.45359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataQLSVDataContext/PHANMON_THEO_CHUYENNGANH/PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" />
-      <nodes>
-        <classShapeMoniker Id="901b47c1-70d7-4b61-b1ab-406f678d9ed8" />
-        <classShapeMoniker Id="ba0dc754-38ca-468e-9568-cc43c7cc80b2" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5 : 6.60655843098958); (3 : 6.60655843098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataQLSVDataContext/SINHVIEN/SINHVIEN_PHANPHONGTHI" />
-      <nodes>
-        <classShapeMoniker Id="6d79d51f-f378-4ddb-b755-0cf1a4d13b43" />
-        <classShapeMoniker Id="ba0dc754-38ca-468e-9568-cc43c7cc80b2" />
-      </nodes>
-    </associationConnector>
     <classShape Id="c7da19a1-1d06-44ec-ba18-956a630ed6b8" absoluteBounds="8.25, 8, 2, 1.1939925130208333">
       <DataClassMoniker Name="/DataQLSVDataContext/DM_PHONGTHI" />
       <nestedChildShapes>
         <elementListCompartment Id="83b26ba8-b748-4d75-b6dc-d6c641f81ddb" absoluteBounds="8.265, 8.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.40625 : 8); (8.40625 : 7.42710611979167); (3 : 7.42710611979167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataQLSVDataContext/DM_PHONGTHI/DM_PHONGTHI_PHANPHONGTHI" />
-      <nodes>
-        <classShapeMoniker Id="c7da19a1-1d06-44ec-ba18-956a630ed6b8" />
-        <classShapeMoniker Id="ba0dc754-38ca-468e-9568-cc43c7cc80b2" />
-      </nodes>
-    </associationConnector>
     <classShape Id="4dc494e9-ec44-4475-ad07-9a06a26a57dc" absoluteBounds="4.375, 1.375, 2, 1.1939925130208333">
       <DataClassMoniker Name="/DataQLSVDataContext/DM_HOCKY" />
       <nestedChildShapes>
         <elementListCompartment Id="83310994-3899-464c-8659-4d289d1e124d" absoluteBounds="4.39, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5625 : 2.56899251302083); (4.5625 : 8.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5625 : 2.56899251302083); (4.5625 : 8.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataQLSVDataContext/DM_HOCKY/DM_HOCKY_PHANMON_THEO_CHUYENNGANH" />
       <nodes>
         <classShapeMoniker Id="4dc494e9-ec44-4475-ad07-9a06a26a57dc" />
@@ -170,7 +143,7 @@
         <elementListCompartment Id="0693476a-247f-44f9-ae90-e7b91726d23d" absoluteBounds="2.0149999999999997, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5 : 4.60659912109375); (4 : 4.60659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5 : 4.60659912109375); (4.64583333333333 : 4.60659912109375 : JumpStart); (4.47916666666667 : 4.60659912109375 : JumpEnd); (4 : 4.60659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataQLSVDataContext/SINHVIEN/SINHVIEN_DIEM_TBMON" />
       <nodes>
         <classShapeMoniker Id="6d79d51f-f378-4ddb-b755-0cf1a4d13b43" />
@@ -189,11 +162,38 @@
         <elementListCompartment Id="0002fd95-1cbd-47cd-95a9-85f47b5cf55f" absoluteBounds="3.265, 9.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.25 : 9.97679768880208); (2.875 : 9.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.25 : 9.97679768880208); (2.875 : 9.97679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataQLSVDataContext/DM_LOAITAIKHOAN/DM_LOAITAIKHOAN_TAIKHOAN" />
       <nodes>
         <classShapeMoniker Id="3da83516-a129-4594-a404-acc469f5d403" />
         <classShapeMoniker Id="4d2cdc00-ecae-4cde-bc74-3740c2dd042d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0887be9a-1335-4898-9777-8224c9786b74" isExpanded="false" absoluteBounds="1.5, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DataQLSVDataContext/PHANPHONGTHI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bef85af1-05ed-4427-8723-9a84b99b102f" absoluteBounds="1.5150000000000001, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 8); (7.875 : 7.625); (4.64583333333333 : 7.625 : JumpStart); (4.47916666666667 : 7.625 : JumpEnd); (3.17708083333333 : 7.625 : JumpStart); (3.01041416666667 : 7.625 : JumpEnd); (2.281248 : 7.625); (2.281248 : 6.7)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/DM_PHONGTHI/DM_PHONGTHI_PHANPHONGTHI" />
+      <nodes>
+        <classShapeMoniker Id="c7da19a1-1d06-44ec-ba18-956a630ed6b8" />
+        <classShapeMoniker Id="0887be9a-1335-4898-9777-8224c9786b74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.0937475 : 8.375); (3.0937475 : 6.7)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/PHANMON_THEO_CHUYENNGANH/PHANMON_THEO_CHUYENNGANH_PHANPHONGTHI" />
+      <nodes>
+        <classShapeMoniker Id="901b47c1-70d7-4b61-b1ab-406f678d9ed8" />
+        <classShapeMoniker Id="0887be9a-1335-4898-9777-8224c9786b74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 6.475); (4.64583333333333 : 6.475 : JumpStart); (4.47916666666667 : 6.475 : JumpEnd); (3.5 : 6.475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataQLSVDataContext/SINHVIEN/SINHVIEN_PHANPHONGTHI" />
+      <nodes>
+        <classShapeMoniker Id="6d79d51f-f378-4ddb-b755-0cf1a4d13b43" />
+        <classShapeMoniker Id="0887be9a-1335-4898-9777-8224c9786b74" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

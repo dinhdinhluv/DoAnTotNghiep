@@ -25,16 +25,16 @@ $(document).ready(function () {
             alert("Chọn phòng thi");
         }
         else {
-            LoadDiem($("#MaPhongThi").val(), $("#MaMonHocChuyenNganh").val());
+            LoadDiem();
         }
     });
 });
 
-function LoadDiem(MaPhongThi, MaMonChuyenNganh) {
+function LoadDiem() {
     $.ajax({
         url: '/Diem/DiemTheoPhongThijs',
         async: false,
-        data: { MaPhongThi: MaPhongThi, MaMonHocChuyenNganh: MaMonChuyenNganh },
+        data: { MaPhongThi: $("#MaPhongThi").val(), MaMonHocChuyenNganh: $("#MaMonHocChuyenNganh").val() },
         success: function (data) {
             $("#LoadDiemTheoPhongMon").html(data);
             return;

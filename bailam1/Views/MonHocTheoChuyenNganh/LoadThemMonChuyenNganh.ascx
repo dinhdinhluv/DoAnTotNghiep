@@ -17,6 +17,23 @@
             }
         });
     }
+
+    function KiemTraNhapSoTuNhien(e) {
+        var keypressed = null;
+        if (window.event) {
+            keypressed = window.event.keyCode;
+        }
+        else {
+            keypressed = e.which;
+        }
+
+        if (keypressed < 48 || keypressed > 57) {
+            if (keypressed == 8 || keypressed == 127) {
+                return;
+            }
+            return false;
+        }
+    }
 </script>
 <form class="form-horizontal" action="" id="formThemMonChuyenNganh" style="width:1024px">
         <div class="row">
@@ -60,15 +77,11 @@
                     <label for="MaLop" class="col-sm-5 control-label">
                         DVHT :</label>
                     <div class="col-sm-1" >
-                        <input type="text" style="width:200px;" id="txtDVHT" name="DVHT" />
+                        <input type="text" style="width:200px;" id="txtDVHT" name="DVHT" onkeypress="javascript:return KiemTraNhapSoTuNhien(event);" />
                     </div>
                 </div>
             </div>
         </div>
-        <center>
-     <div style="text-align:center;">
-        <input class="btn btn-primary" onclick="ThemMonChuyenNganh()" id="btThem" type="button" value="Thêm" />
-        <input class="btn btn-primary" id="btTroVe" type="button" value="Trở Về" onclick="loadTroVe();" />
-    </div></center>
+        
     </form>
 

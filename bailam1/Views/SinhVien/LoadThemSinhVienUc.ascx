@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" runat="server" Inherits="System.Web.Mvc.ViewUserControl<bailam1.Models.FormModel.SinhVienForm>" %>
 <script src="../../Content/js/bootstrap-filestyle.js" type="text/javascript"></script>
-    <script>
+    <script type="text/javascript">
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -16,6 +16,8 @@
             }
         }
         $(":file").filestyle({ badge: false });
+
+        
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
 
@@ -116,9 +118,9 @@
                 </div>
             </div>
         </div>
-     <div style="text-align:center">
+<%--     <div style="text-align:center">
         <input class="btn btn-primary" onclick="ThucHienThemSV()" id="btThem" type="button" value="Thêm" />
         <input class="btn btn-primary" id="btTroVe" type="button" value="Trở Về" onclick="loadTroVe();" />
-    </div>
+    </div>--%>
     </form>
 

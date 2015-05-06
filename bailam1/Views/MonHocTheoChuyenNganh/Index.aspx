@@ -18,6 +18,12 @@
                 </div>
                 <div class="modal-body">
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="BtnAdd" onclick="ThemMonChuyenNganh()">
+                        Thêm</button>
+                    <button type="button" class="btn btn-default" onclick="$('#loadthemmonchuyennganh').modal('hide');">
+                        Đóng</button>
+                </div>
             </div>
             <!-- /.modal-content -->
         </div>
@@ -29,10 +35,10 @@
                 <strong>PHÂN MÔN THEO CHUYÊN NGÀNH</strong></h3>
         </div>
         <div class="panel-body">
-            <%=Html.DropDownList("cbxKhoa", Model.listKhoa, new { style = "width:200px;" })%> <input class="btn btn-primary" id="Button1" type="button" value="Phân Môn Chuyên Ngành Mới" onclick="LoadThemMonChuyenNganh()" />
+            <%=Html.DropDownList("cbxKhoa", Model.listKhoa, new { style = "width:200px;" })%> 
         </div>
         <div id="lstPhanMon"></div>
-        <input id="vothemlop" type="button" class="btn btn-primary center-block" value="Thêm mới" onclick="ThemTrenModal()" />
+        <input class="btn btn-primary center-block" id="Button1" type="button" value="Phân Môn Chuyên Ngành Mới" onclick="LoadThemMonChuyenNganh()" />
     </div>
     
     

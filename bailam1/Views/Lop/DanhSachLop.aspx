@@ -6,6 +6,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../../Scripts/test.js" type="text/javascript"></script>
+    <% if( Session["Username"]==null)
+           Response.Redirect("~/Admin/Index");
+            %>
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title text-center">

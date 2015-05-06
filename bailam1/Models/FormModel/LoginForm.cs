@@ -19,5 +19,7 @@ namespace bailam1.Models.FormModel
         public int PageNumber { get; set; }
         public PagedList<LoginForm> PageListDanhSachAdmin { get; set; }
         public List<LoginForm> DSTK { get; set; }
+
+        public SelectList listQuyenHan { get; set; }
     }
 }

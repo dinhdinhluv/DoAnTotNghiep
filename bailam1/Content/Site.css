@@ -1,4 +1,21 @@
-﻿.giuadong
+﻿input[type='radio']
+{
+    display:inline-block !important;
+}
+
+radio
+{ display:inline-block !important;
+    }
+    input[type='checkbox']
+{
+    display:inline-block !important;
+}
+
+checkbox
+{ display:inline-block !important;
+    }
+
+.giuadong
 {
     text-align:center;
 }
