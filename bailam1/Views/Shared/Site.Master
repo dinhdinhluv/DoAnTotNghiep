@@ -42,6 +42,8 @@
             <li class="blue">
                 <a href="/Diem/DiemTheoPhongThi"><span class="nav-description">Quản lý điểm</span></a>
             </li>
+            <%if (Session["LoaiTK"] == "Super Admin")
+              {%>
             <li class="blue">
                 <a href="#">
                    <span class="nav-description">Quản lý tài khoản</span> 
@@ -51,9 +53,11 @@
                     <li><a href="/Admin/CapQuyenTaiKhoan">Cấp quyền tài khoản</a></li> 
                 </ul>
             </li>
+            <%}
+              else { } %>
             <li class="blue">
                 <a href="#">
-                   <span>Hi: <%: Session["Username"]%></span> 
+                   <span>Hi: <%: Session["LoaiTK"]%> <%: Session["Username"]%> </span>
                 </a>
                 <ul class="normal-dropdown normalAnimation">
                     <li><a href="/Admin/DangXuat">Đăng Xuất</a></li>

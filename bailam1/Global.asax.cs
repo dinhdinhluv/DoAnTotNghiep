@@ -16,41 +16,41 @@ namespace bailam1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            /// http://sever/SinhVien
-            routes.MapRoute(
-                "SinhVien Route", // Route name
-                "SinhVien/{action}/{id}", // URL with parameters
-                new { controller = "SinhVien", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
+            ///// http://sever/SinhVien
+            //routes.MapRoute(
+            //    "SinhVien Route", // Route name
+            //    "SinhVien/{action}/{id}", // URL with parameters
+            //    new { controller = "SinhVien", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            //);
 
-            /// http://sever/Diem
-            routes.MapRoute(
-                "Diem Route", // Route name
-                "Diem/{action}/{id}", // URL with parameters
-                new { controller = "Diem", action = "DiemTheoPhongThi", id = UrlParameter.Optional } // Parameter defaults
-            );
+            ///// http://sever/Diem
+            //routes.MapRoute(
+            //    "Diem Route", // Route name
+            //    "Diem/{action}/{id}", // URL with parameters
+            //    new { controller = "Diem", action = "DiemTheoPhongThi", id = UrlParameter.Optional } // Parameter defaults
+            //);
 
       
-            ///http://sever/Lop
-            routes.MapRoute(
-                "Lop Route", // Route name
-                "Lop/{action}/{id}", // URL with parameters
-                new { controller = "Lop", action = "DanhSachLop", id = UrlParameter.Optional } // Parameter defaults
-            );
+            /////http://sever/Lop
+            //routes.MapRoute(
+            //    "Lop Route", // Route name
+            //    "Lop/{action}/{id}", // URL with parameters
+            //    new { controller = "Lop", action = "DanhSachLop", id = UrlParameter.Optional } // Parameter defaults
+            //);
 
-            //http://sever/Account
-            routes.MapRoute(
-                "Admin Route", // Route name
-                "Account/{action}/{id}", // URL with parameters
-                new { controller = "Admin", action = "DanhSachAdmin", id = UrlParameter.Optional } // Parameter defaults
-            );
+            ////http://sever/Account
+            //routes.MapRoute(
+            //    "Admin Route", // Route name
+            //    "Account/{action}/{id}", // URL with parameters
+            //    new { controller = "Admin", action = "DanhSachAdmin", id = UrlParameter.Optional } // Parameter defaults
+            //);
 
-            //http://sever/Level
-            routes.MapRoute(
-                "Level Route", // Route name
-                "Level/{action}/{id}", // URL with parameters
-                new { controller = "Admin", action = "CapQuyenTaiKhoan", id = UrlParameter.Optional } // Parameter defaults
-            );
+            ////http://sever/Level
+            //routes.MapRoute(
+            //    "Level Route", // Route name
+            //    "Level/{action}/{id}", // URL with parameters
+            //    new { controller = "Admin", action = "CapQuyenTaiKhoan", id = UrlParameter.Optional } // Parameter defaults
+            //);
 
             /// http://sever/Login
             routes.MapRoute(

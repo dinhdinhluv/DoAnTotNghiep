@@ -145,6 +145,26 @@ namespace bailam1.Function
             return f;
         }
 
+        public LoginForm GetTaiKhoanTheoUserName(string Username)
+        {
+            var f = new LoginForm();
+            var tk = _QLSVData.TAIKHOANs.FirstOrDefault(t => t.TaiKhoan1 == Username);
+            if (tk != null)
+            {
+                f.ID = tk.ID;
+                f.TaiKhoan = tk.TaiKhoan1;
+                f.MatKhau = tk.MatKhau;
+                f.MaLoaiTaiKhoan = tk.MaLoaiTK;
+                var e = _QLSVData.DM_LOAITAIKHOANs.FirstOrDefault(n => n.MaLoaiTK == tk.MaLoaiTK);
+                if (e != null)
+                {
+                    f.TenLoaiTaiKhoan = e.TenLoaiTK;
+                }
+                else { f.TenLoaiTaiKhoan = ""; }
+            }
+            return f;
+        }
+
         public bool CheckLogin(string Username, string Password)
         {
             var lstTK = _QLSVData.TAIKHOANs.FirstOrDefault(i => i.TaiKhoan1.Trim() == Username.Trim() && i.MatKhau.Trim() == Password.Trim());

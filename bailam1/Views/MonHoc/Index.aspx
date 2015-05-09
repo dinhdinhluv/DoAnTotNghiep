@@ -6,6 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../../Scripts/JSQLMH.js" type="text/javascript"></script>
+    <% if( Session["Username"]==null)
+           Response.Redirect("~/Admin/Index");
+            %>
     <div class="modal fade" id="themmonhoc">
         <div class="modal-dialog" style="width:400px;">
             <div class="modal-content">

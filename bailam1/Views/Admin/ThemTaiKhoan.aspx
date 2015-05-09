@@ -3,6 +3,9 @@
     Thêm tài khoản..
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<% if( Session["Username"]==null)
+           Response.Redirect("~/Admin/Index");
+            %>
     <div class="modal-dialog" id="themtk">
     </div>
 </asp:Content>

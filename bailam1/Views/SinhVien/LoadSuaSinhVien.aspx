@@ -13,6 +13,9 @@
     });
 </script>
     <script src="../../Scripts/JSQLSV.js" type="text/javascript"></script>
+    <% if( Session["Username"]==null)
+           Response.Redirect("~/Admin/Index");
+            %>
     <div class="modal-dialog" id="suasinhvien" style="width:1024px;">
     </div>
 </asp:Content>

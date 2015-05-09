@@ -6,7 +6,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <script src="../../Scripts/JSPhanMon.js" type="text/javascript"></script>
-
+    <% if( Session["Username"]==null)
+           Response.Redirect("~/Admin/Index");
+            %>
     <div class="modal fade" id="loadthemmonchuyennganh">
         <div class="modal-dialog" style="width:600px;">
             <div class="modal-content">

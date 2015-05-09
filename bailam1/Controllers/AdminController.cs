@@ -99,8 +99,11 @@ namespace bailam1.Controllers
         public JsonResult Login(string Username, string Password)
         {
             var chkLogin = _CHECK.CheckLogin(Username, Password);
-            if(chkLogin == true)
+            if (chkLogin == true)
                 Session["Username"] = Username;
+            var chkQH = _CHECK.GetTaiKhoanTheoUserName(Username);
+            if (chkQH != null)
+                Session["LoaiTK"] = chkQH.TenLoaiTaiKhoan;
             return Json(chkLogin, JsonRequestBehavior.AllowGet);
         }
 

@@ -40,12 +40,12 @@ function ThemTaiKhoan() {
             data: $('#formthemtk').serialize(),
             success: function (data) {
                 if (data == true) {
-                    alert("Thêm thành công..!");
+                    alert("Tạo tài khoản thành công..!");
                     PhanTrangAdmin();
                     $('#themtk').modal('hide');
                 }
                 else {
-                    alert("Tài khoản đã bị trùng..!");
+                    alert("Tài khoản đã tồn tại..!");
                 }
             }
         });
@@ -59,7 +59,7 @@ function ThemTaiKhoan() {
 }
 
 function XoaTaiKhoan(id) {
-    var r = confirm("Bạn có chắc muốn xóa ?");
+    var r = confirm("Bạn có chắc muốn xóa tài khoản này ?");
     if (r == true) {
 
         $.ajax({
@@ -84,12 +84,12 @@ function SuaTaiKhoan() {
             data: $('#formsuatk').serialize(),
             success: function (data) {
                 if (data == true) {
-                    alert("Sửa thành công..!");
+                    alert("Đổi mật khẩu thành công..!");
                     PhanTrangAdmin();
                     $('#suatk').modal('hide');
                 }
                 else {
-                    alert("Sửa thành công..!");
+                    alert("Đổi mật khẩu không thành công vui lòng kiểm tra lại thông tin..!");
                 }
             }
         });
